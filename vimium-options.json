@@ -1,0 +1,26 @@
+{
+  "settingsVersion": "1.66",
+  "exclusionRules": [
+    {
+      "pattern": "https?://mail.google.com/*",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "# Vim-like page down/up\nunmap d\nunmap u\nmap <c-d> scrollPageDown\nmap <c-u> scrollPageUp\n\n# Vim-like back and forward\nunmap H\nunmap L\nmap <c-h> previousTab\nmap <c-l> nextTab\nmap <c-o> goBack\nmap <c-i> goForward\n\n# vinegar.vim-like functionality\nmap - goUp",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": true,
+  "grabBackFocus": false,
+  "searchEngines": "",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n  padding: 2px 3px;\n  background-color: #feda31;\n  border: 0;\n  border-radius: 2px;\n  background-image: none;\n}\n\ndiv > .vimiumHintMarker span {\n  font-size: 14px;\n  font-weight: bold;\n  text-shadow: none;\n  letter-spacing: 1px;\n  color: #4a400e;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n  color: #dcbc2a;\n}"
+}

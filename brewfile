@@ -1,0 +1,50 @@
+# Options
+cask_args appdir: '~/Applications'
+
+# Taps
+tap 'homebrew/cask'
+tap 'homebrew/bundle'
+tap 'homebrew/core'
+tap 'homebrew/services'
+tap 'homebrew/cask-fonts'
+
+##################
+# Casks
+##################
+
+cask 'docker'
+cask 'google-chrome'
+cask 'iterm2'
+cask 'keepassx'
+cask 'sketch'
+cask 'spectacle'
+cask 'visual-studio-code'
+cask 'font-fira-code'
+cask 'karabiner-elements'
+cask 'spotify'
+cask 'discord'
+
+##################
+# Brews
+##################
+
+# Shell
+    brew 'reattach-to-user-namespace'
+    brew 'tmux'
+    brew 'trash'
+    brew 'tree'
+    brew 'watchman'
+    brew 'zsh'
+    brew 'neovim'
+
+# Git
+    brew 'git'
+    brew 'gh'
+
+# JavaScript
+    brew 'n'
+    brew 'yarn', args: ['without-node']
+
+# Database
+
+# General
