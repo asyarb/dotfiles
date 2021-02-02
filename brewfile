@@ -20,7 +20,6 @@ cask 'sketch'
 cask 'spectacle'
 cask 'visual-studio-code'
 cask 'font-fira-code'
-cask 'karabiner-elements'
 cask 'spotify'
 cask 'discord'
 
@@ -43,7 +42,6 @@ cask 'discord'
 
 # JavaScript
     brew 'n'
-    brew 'yarn', args: ['without-node']
 
 # Database
 
