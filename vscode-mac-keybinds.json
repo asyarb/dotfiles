@@ -269,5 +269,20 @@
     "key": "f2",
     "command": "-editor.action.rename",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "l",
+    "command": "-list.select",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "l",
+    "command": "list.toggleExpand",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "o",
+    "command": "-list.toggleExpand",
+    "when": "listFocus && !inputFocus"
   }
 ]
