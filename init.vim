@@ -56,6 +56,7 @@ call plug#end()
 " coc-tailwind-intellisense
 " coc-toml
 " coc-html
+" coc-tailwindcss3
 
 """"""""""""""""""
 " Functions
