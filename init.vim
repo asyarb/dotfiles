@@ -23,6 +23,7 @@ call plug#begin()
     Plug 'joshdick/onedark.vim'
     Plug 'itchyny/lightline.vim'
     Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'luochen1990/rainbow'
 
 " File finder
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -147,7 +148,6 @@ endfunc
     set lazyredraw
     set cursorline
     set background=dark
-    set colorcolumn=80
 
     let g:lightline = { 'colorscheme': 'onedark' }
     colorscheme onedark
@@ -195,7 +195,7 @@ endfunc
 " Rainbow parenthesis
     let g:rainbow_active = 1
     let g:rainbow_conf = {
-    \	'guifgs': ['#DCDCAA', '#C586C0', '#569cd6'],
+    \	'guifgs': ['#E5c07B', '#C678DD', '#56B6C2'],
     \	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
     \	'operators': '',
     \}
