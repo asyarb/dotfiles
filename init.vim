@@ -17,6 +17,7 @@ call plug#begin()
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'alvan/vim-closetag'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " UI
     Plug 'joshdick/onedark.vim'
@@ -52,6 +53,18 @@ call plug#end()
 " coc-eslint
 " coc-rust-analyzer
 " coc-tailwind-intellisense
+" coc-html
+
+""""""""""""""""""
+" Installed Treesitter Extensions
+""""""""""""""""""
+
+" typescript
+" tsx
+" css
+" rust
+" javascript
+" html
 
 """"""""""""""""""
 " Functions
@@ -167,7 +180,7 @@ endfunc
     au BufRead,BufNewFile *.[Dd]ockerfile setf Dockerfile
 
     " Syntax highlight Markdown fenced blocks
-    let g:vim_markdown_fenced_languages = ['js', 'bash=sh']
+    let g:vim_markdown_fenced_languages = ['js', 'bash=sh', 'ts', 'css', 'html', 'tsx']
 
 " Prettier
     command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -336,6 +349,31 @@ endfunc
     nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
     " Resume latest coc list.
     nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Treesitter
+    lua << EOF
+        require'nvim-treesitter.configs'.setup {
+          -- A list of parser names, or "all"
+          ensure_installed = { "typescript", "tsx", "css", "rust", "javascript", "html" },
+
+          -- Install parsers synchronously (only applied to `ensure_installed`)
+          sync_install = false,
+
+          -- Automatically install missing parsers when entering buffer
+          auto_install = true,
+
+          highlight = {
+            -- `false` will disable the whole extension
+            enable = true,
+
+            -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+            -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+            -- Using this option may slow down your editor, and you may see some duplicate highlights.
+            -- Instead of true it can also be a list of languages
+            additional_vim_regex_highlighting = false,
+          },
+        } 
+EOF
 
 " Terminal
     " Navigate windows
