@@ -131,6 +131,18 @@ endfunc
 " Fuzzy File Finder
     set rtp+=/usr/bin/fzf
 
+" Lightline
+    let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ 'colorscheme': 'onedark',
+      \ } 
+
 " Language customizations
 
 " UI
@@ -139,7 +151,6 @@ endfunc
     set cursorline
     set background=dark
 
-    let g:lightline = { 'colorscheme': 'onedark' }
     colorscheme onedark
 
 " Indention
@@ -195,6 +206,7 @@ endfunc
 
 " Colorize valid color codes in files
     lua require'colorizer'.setup()
+
 
 " coc.nvim
     " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable

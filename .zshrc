@@ -47,7 +47,7 @@ export PATH="$PNPM_HOME:$NPM_GLOBAL:$GO:$RBENV:$PATH"
 eval "$(rbenv init - zsh)"
 
 # Keyboard shortcuts
-bindkey -s "^f" 'cd $(fdfind --type d --hidden --follow --exclude "{.git,node_modules}" | fzf)\n'
+bindkey -s "^p" 'cd $(fdfind --type d --hidden --follow --exclude "{.git,node_modules}" | fzf)\n'
 
 # FZF
 source /usr/share/doc/fzf/examples/key-bindings.zsh
