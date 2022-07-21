@@ -58,17 +58,6 @@ call plug#end()
 " coc-html
 
 """"""""""""""""""
-" Installed Treesitter Extensions
-""""""""""""""""""
-
-" typescript
-" tsx
-" css
-" rust
-" javascript
-" html
-
-""""""""""""""""""
 " Functions
 """"""""""""""""""
 
