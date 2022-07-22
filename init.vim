@@ -1,3 +1,5 @@
+let g:polyglot_disabled = ['jsx', 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'go', 'rust']
+
 """"""""""""""""""
 " Plugins
 """"""""""""""""""
@@ -18,6 +20,7 @@ call plug#begin()
     Plug 'alvan/vim-closetag'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'lukas-reineke/indent-blankline.nvim'
 
 " UI
     Plug 'joshdick/onedark.vim'
@@ -109,6 +112,9 @@ endfunc
 " Unix yank support for system clipboard
     set clipboard+=unnamedplus
 
+" Prevent `:Gf` when I really meant `:GF`
+    command Gf GF
+
 " WSL yank support for system clipboard. w32yank.exe MUST be in the unix path
 " $PATH. See: https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard
     let g:clipboard = {
@@ -153,17 +159,28 @@ endfunc
 
     colorscheme onedark
 
+" Line width
+    set textwidth=80
+
 " Indention
     filetype plugin indent on
-    set tabstop=2
-    set shiftwidth=2
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+    set smartindent
     set expandtab
-    set breakindent
-    set formatoptions=l
-    set lbr
+    set formatoptions=lq
+
+" indentLine
+    let g:indent_blankline_char = '|'
+
+" Don't hide characters like the "**" in "**word**"
+    let g:vim_json_syntax_conceal = 0
+    let g:vim_markdown_conceal = 0
+    let g:vim_markdown_conceal_code_blocks = 0
 
 " Folding
-    set foldmethod=indent
+    set foldmethod=syntax
     set foldlevelstart=99
 
 " EasyAlign
@@ -351,29 +368,32 @@ endfunc
 
 " Treesitter
     lua << EOF
-        require'nvim-treesitter.configs'.setup {
-          -- A list of parser names, or "all"
-          ensure_installed = { "typescript", "tsx", "css", "rust", "javascript", "html" },
+require'nvim-treesitter.configs'.setup {
+    -- A list of parser names, or "all"
+    ensure_installed = { "typescript", "tsx", "css", "rust", "javascript", "html" },
 
-          -- Install parsers synchronously (only applied to `ensure_installed`)
-          sync_install = false,
+    -- Install parsers synchronously (only applied to `ensure_installed`)
+    sync_install = false,
 
-          -- Automatically install missing parsers when entering buffer
-          auto_install = true,
+    -- Automatically install missing parsers when entering buffer
+    auto_install = true,
 
-          highlight = {
-            -- `false` will disable the whole extension
-            enable = true,
+    highlight = {
+        -- `false` will disable the whole extension
+        enable = true,
 
-            disable = { "markdown", "vim" },
+        disable = { "markdown", "vim" },
 
-            -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-            -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-            -- Using this option may slow down your editor, and you may see some duplicate highlights.
-            -- Instead of true it can also be a list of languages
-            additional_vim_regex_highlighting = false,
-          },
-        } 
+        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+        -- Using this option may slow down your editor, and you may see some duplicate highlights.
+        -- Instead of true it can also be a list of languages
+        additional_vim_regex_highlighting = false,
+    },
+    indent = {
+        enable = true,
+    },
+} 
 EOF
 
 " Terminal
