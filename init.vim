@@ -1,5 +1,3 @@
-let g:polyglot_disabled = ['jsx', 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'go', 'rust']
-
 """"""""""""""""""
 " Plugins
 """"""""""""""""""
@@ -40,12 +38,11 @@ call plug#begin()
  " Scratch
     Plug 'duff/vim-scratch'
 
-" Language Support
-    Plug 'sheerun/vim-polyglot'
-
 " Autoclose Tags
 
 call plug#end()
+
+call yankstack#setup()
 
 """"""""""""""""""
 " Installed Coc extensions
@@ -102,7 +99,7 @@ endfunc
 " Give more space for displaying messages.
     set cmdheight=2
 
-" Undo management
+" Undo management and persistence
     set undodir=~/.nvim/undodir
     set undofile
 
