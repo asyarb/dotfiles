@@ -27,8 +27,11 @@ call plug#begin()
     Plug 'itchyny/lightline.vim'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'luochen1990/rainbow'
+    Plug 'kyazdani42/nvim-web-devicons'
 
 " File finder
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 " Git
     Plug 'tpope/vim-fugitive'
@@ -128,9 +131,6 @@ endfunc
     let g:netrw_banner = 1
 
 
-" Fuzzy File Finder
-    set rtp+=/usr/bin/fzf
-
 " Lightline
     let g:lightline = {
       \ 'active': {
@@ -142,6 +142,12 @@ endfunc
       \ },
       \ 'colorscheme': 'tokyonight',
       \ } 
+
+" File Finding (fzf)
+    nnoremap <leader>ff <cmd>Telescope find_files<cr>
+    nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+    nnoremap <leader>fb <cmd>Telescope buffers<cr>
+    nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Language customizations
 
@@ -221,6 +227,44 @@ endfunc
 
 " Colorize valid color codes in files
     lua require'colorizer'.setup()
+
+" Icons
+    lua << EOF
+require'nvim-web-devicons'.setup {
+    default = true;
+}
+EOF
+    
+
+" Treesitter
+    lua << EOF
+require'nvim-treesitter.configs'.setup {
+    -- A list of parser names, or "all"
+    ensure_installed = { "typescript", "tsx", "css", "rust", "javascript", "html" },
+
+    -- Install parsers synchronously (only applied to `ensure_installed`)
+    sync_install = false,
+
+    -- Automatically install missing parsers when entering buffer
+    auto_install = true,
+
+    highlight = {
+        -- `false` will disable the whole extension
+        enable = true,
+
+        disable = { "markdown", "vim" },
+
+        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+        -- Using this option may slow down your editor, and you may see some duplicate highlights.
+        -- Instead of true it can also be a list of languages
+        additional_vim_regex_highlighting = false,
+    },
+    indent = {
+        enable = true,
+    },
+} 
+EOF
 
 
 " coc.nvim
@@ -364,35 +408,6 @@ endfunc
     " Resume latest coc list.
     nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-" Treesitter
-    lua << EOF
-require'nvim-treesitter.configs'.setup {
-    -- A list of parser names, or "all"
-    ensure_installed = { "typescript", "tsx", "css", "rust", "javascript", "html" },
-
-    -- Install parsers synchronously (only applied to `ensure_installed`)
-    sync_install = false,
-
-    -- Automatically install missing parsers when entering buffer
-    auto_install = true,
-
-    highlight = {
-        -- `false` will disable the whole extension
-        enable = true,
-
-        disable = { "markdown", "vim" },
-
-        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-        -- Using this option may slow down your editor, and you may see some duplicate highlights.
-        -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = false,
-    },
-    indent = {
-        enable = true,
-    },
-} 
-EOF
 
 " Terminal
     " Navigate windows
