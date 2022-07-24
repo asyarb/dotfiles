@@ -40,7 +40,7 @@
       "colorScheme": "Tokyo Night",
       "cursorShape": "filledBox",
       "font": {
-        "face": "Fira Code",
+        "face": "FiraCode NF Retina",
         "size": 10
       },
       "padding": "4"
@@ -65,7 +65,7 @@
       {
         "cursorShape": "filledBox",
         "font": {
-          "face": "Fira Code",
+          "face": "FiraCode NF Retina",
           "size": 10
         },
         "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
@@ -91,18 +91,18 @@
   "schemes": [
     {
       "name": "Tokyo Night",
-      "foreground": "#a9b1dc",
-      "background": "#1a1b2c",
+      "foreground": "#c0caf5",
+      "background": "#1a1b26",
       "cursorColor": "#c0caf5",
-      "selectionBackground": "#28344a",
-      "black": "#414868",
+      "selectionBackground": "#33467C",
+      "black": "#15161E",
       "red": "#f7768e",
-      "green": "#73daca",
+      "green": "#9ece6a",
       "yellow": "#e0af68",
       "blue": "#7aa2f7",
       "purple": "#bb9af7",
       "cyan": "#7dcfff",
-      "white": "#c0caf5",
+      "white": "#a9b1d6",
       "brightBlack": "#414868",
       "brightRed": "#f7768e",
       "brightGreen": "#73daca",
