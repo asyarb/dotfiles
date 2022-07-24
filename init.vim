@@ -16,27 +16,24 @@ call plug#begin()
     Plug 'junegunn/vim-easy-align'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'alvan/vim-closetag'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'lukas-reineke/indent-blankline.nvim'
 
+" Completion and LSP
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " UI
-    Plug 'joshdick/onedark.vim'
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     Plug 'itchyny/lightline.vim'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'luochen1990/rainbow'
 
 " File finder
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
 
 " Git
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'airblade/vim-gitgutter'
-
- " Scratch
-    Plug 'duff/vim-scratch'
 
 " Autoclose Tags
 
@@ -143,7 +140,7 @@ endfunc
       \ 'component_function': {
       \   'gitbranch': 'FugitiveHead'
       \ },
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'tokyonight',
       \ } 
 
 " Language customizations
@@ -154,7 +151,11 @@ endfunc
     set cursorline
     set background=dark
 
-    colorscheme onedark
+    let g:tokyonight_style = "night"
+    let g:tokyonight_italic_functions = 1
+    let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
+
+    colorscheme tokyonight
 
 " Line width
     set textwidth=80
