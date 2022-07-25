@@ -30,6 +30,10 @@ call plug#begin()
     Plug 'folke/trouble.nvim'
     Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 
+" Snippets
+    Plug 'L3MON4D3/LuaSnip'
+    Plug 'saadparwaiz1/cmp_luasnip'
+
 " Prettier
     " post install (yarn install | npm install) then load plugin only for editing supported files
     Plug 'prettier/vim-prettier', {
@@ -278,6 +282,7 @@ EOF
 lua <<EOF
     local cmp = require'cmp'
     local lsp = vim.lsp
+    local luasnip = require'luasnip'
 
     local border_opts = { border = 'rounded', focusable = false, scope = 'line' }
 
@@ -318,7 +323,16 @@ lua <<EOF
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
     end
 
+    require('luasnip.loaders.from_vscode').lazy_load()
+    vim.api.nvim_command('hi LuasnipChoiceNodePassive cterm=italic')
+
     cmp.setup({
+        snippet = {
+            -- REQUIRED - you must specify a snippet engine
+            expand = function(args)
+                require('luasnip').lsp_expand(args.body) 
+            end,
+        },
         formatting = {
             format = function(entry, item)
                 local menu_map = {
@@ -375,24 +389,37 @@ lua <<EOF
             ['<Tab>'] = function(fallback)
                 if cmp.visible() then
                     cmp.select_next_item()
+                elseif luasnip.expand_or_jumpable() then
+                    luasnip.expand_or_jump()
                 else
                     fallback()
-                end
+            end
             end,
             ['<S-Tab>'] = function(fallback)
                 if cmp.visible() then
                     cmp.select_prev_item()
+                elseif luasnip.jumpable(-1) then
+                    luasnip.jump(-1)
                 else
                     fallback()
                 end
             end,
         }),
-        sources = cmp.config.sources({
-            { name = 'nvim_lsp' },
-        }, {
-            { name = 'buffer' },
-            { name = 'rg' },
-        })
+        sources = cmp.config.sources(
+            {
+                { name = 'nvim_lsp', priority = 10 },
+                { name = 'nvim_lsp_signature_help' },
+                { name = 'luasnip' },
+            }, 
+            {
+                { name = "nvim_lua" }
+            },
+            {
+                { name = 'buffer' },
+                { name = 'path' },
+                { name = 'rg' },
+            }
+        )
     })
 
     -- Set configuration for specific filetype.
@@ -415,6 +442,14 @@ lua <<EOF
     }
 
     require('lspconfig')['vimls'].setup {
+        capabilities = capabilities
+    }
+
+    require('lspconfig')['tailwindcss'].setup {
+        capabilities = capabilities
+    }
+
+    require('lspconfig')['cssls'].setup {
         capabilities = capabilities
     }
 EOF
