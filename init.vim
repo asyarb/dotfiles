@@ -278,14 +278,16 @@ lua << EOF
     end)
 EOF
 
+
 " Completion
 lua <<EOF
     local cmp = require'cmp'
     local lsp = vim.lsp
     local luasnip = require'luasnip'
 
-    local border_opts = { border = 'rounded', focusable = false, scope = 'line' }
+    local border_opts = { border = 'rounded', focusable = true, scope = 'line' }
 
+    -- Completion text
     lsp.protocol.CompletionItemKind = {
         Text = ' [text]',
         Method = ' [method]',
@@ -317,12 +319,14 @@ lua <<EOF
     lsp.handlers['textDocument/signatureHelp'] = lsp.with(lsp.handlers.signature_help, border_opts)
     lsp.handlers['textDocument/hover'] = lsp.with(lsp.handlers.hover, border_opts)
 
+    -- Gutter icons
     local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
     end
 
+    -- Snippets
     require('luasnip.loaders.from_vscode').lazy_load()
     vim.api.nvim_command('hi LuasnipChoiceNodePassive cterm=italic')
 
@@ -432,11 +436,19 @@ lua <<EOF
         }
     })
 
+    vim.diagnostic.config({
+        virtual_text = false,
+        signs = true,
+        underline = true,
+        update_in_insert = false,
+        severity_sort = false,
+    })
+
     -- capabilities
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-    -- Replace <[]> with each lsp server you've enabled.
+    -- Repeat for every server you want to initiate
     require('lspconfig')['tsserver'].setup {
         capabilities = capabilities
     }
@@ -489,6 +501,7 @@ lua << EOF
 
     nkeymap('<leader>af', '<cmd>Lspsaga code_action<CR>')
     nkeymap('<leader>rn', '<cmd>Lspsaga rename<CR>')
+    nkeymap("<leader>K", "<cmd>Lspsaga show_line_diagnostics<CR>")
 EOF
 
 " Terminal
