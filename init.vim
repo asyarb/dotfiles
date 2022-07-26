@@ -29,6 +29,7 @@ call plug#begin()
     Plug 'hrsh7th/nvim-cmp'
     Plug 'folke/trouble.nvim'
     Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+    Plug 'simrat39/rust-tools.nvim', { 'branch': 'modularize_and_inlay_rewrite' }
 
 " Snippets
     Plug 'L3MON4D3/LuaSnip'
@@ -413,13 +414,11 @@ lua <<EOF
             {
                 { name = 'nvim_lsp', priority = 10 },
                 { name = 'nvim_lsp_signature_help' },
+                { name = "nvim_lua" },
                 { name = 'luasnip' },
             }, 
             {
-                { name = "nvim_lua" }
-            },
-            {
-                { name = 'buffer' },
+                { name = 'buffer', keyword_length = 3 },
                 { name = 'path' },
                 { name = 'rg' },
             }
@@ -464,6 +463,27 @@ lua <<EOF
     require('lspconfig')['cssls'].setup {
         capabilities = capabilities
     }
+
+    require("rust-tools").setup({
+        tools = {
+            autoSetHints = true,
+            hover_with_actions = true,
+            inlay_hints = {
+                only_current_line = false,
+                show_parameter_hints = true,
+                parameter_hints_prefix = ':',
+                other_hints_prefix = ':',
+            },
+        },
+        server = {
+            capabilities = capabilities,
+            settings = {
+                ["rust-analyzer"] = {
+                    checkOnSave = { command = 'clippy' }
+                }
+            }
+        }
+    })
 EOF
 
 " Trouble
