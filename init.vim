@@ -19,6 +19,7 @@ call plug#begin()
     Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Completion and LSP
+    Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'williamboman/nvim-lsp-installer'
     Plug 'neovim/nvim-lspconfig'
@@ -29,7 +30,6 @@ call plug#begin()
     Plug 'hrsh7th/nvim-cmp'
     Plug 'folke/trouble.nvim'
     Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
-    Plug 'simrat39/rust-tools.nvim', { 'branch': 'modularize_and_inlay_rewrite' }
 
 " Snippets
     Plug 'L3MON4D3/LuaSnip'
@@ -50,7 +50,6 @@ call plug#begin()
     Plug 'kyazdani42/nvim-web-devicons'
 
 " File finder
-    Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 " Git
@@ -94,9 +93,6 @@ set completeopt=menu,menuone,noselect
     set nobackup
     set nowritebackup
 
-" Give more space for displaying messages.
-    " set cmdheight=2
-
 " Undo management and persistence
     set undodir=~/.nvim/undodir
     set undofile
@@ -106,9 +102,6 @@ set completeopt=menu,menuone,noselect
 
 " Unix yank support for system clipboard
     set clipboard+=unnamedplus
-
-" Prevent `:Gf` when I really meant `:GF`
-    command Gf GF
 
 " WSL yank support for system clipboard. w32yank.exe MUST be in the unix path
 " $PATH. See: https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard
@@ -175,11 +168,6 @@ set completeopt=menu,menuone,noselect
 " indentLine
     let g:indent_blankline_char = '|'
 
-" Don't hide characters like the "**" in "**word**"
-    let g:vim_json_syntax_conceal = 0
-    let g:vim_markdown_conceal = 0
-    let g:vim_markdown_conceal_code_blocks = 0
-
 " Folding
     set foldmethod=expr
     set foldexpr=nvim_treesitter#foldexpr()
@@ -195,14 +183,6 @@ set completeopt=menu,menuone,noselect
 " Yankstack
     let g:yankstack_map_keys = 0
     nmap <C-P> <Plug>yankstack_substitute_older_paste
-
-" Language Support
-    " Set Dockerfile syntax for *.dockerfile
-    au BufRead,BufNewFile *.[Dd]ockerfile setf Dockerfile
-
-    " Syntax highlight Markdown fenced blocks
-    let g:vim_markdown_fenced_languages = ['js', 'bash=sh', 'ts', 'css', 'html', 'tsx']
-
 
 " Make 0 go to first character in line
     map 0 ^
@@ -243,7 +223,7 @@ EOF
 lua << EOF
     require'nvim-treesitter.configs'.setup {
         -- A list of parser names, or "all"
-        ensure_installed = { "typescript", "tsx", "css", "rust", "javascript", "html" },
+        ensure_installed = { "typescript", "tsx", "css", "javascript", "html" },
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
         sync_install = false,
@@ -274,6 +254,22 @@ lua << EOF
     local lsp_installer = require("nvim-lsp-installer")
     lsp_installer.on_server_ready(function(server)
         local opts = {}
+
+        if server.name == "sumneko_lua" then
+            opts = {
+              settings = {
+                Lua = {
+                  diagnostics = {
+                    globals = { 'vim', 'use' }
+                  },
+                  workspace = {
+                    -- Make the server aware of Neovim runtime files
+                    library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true}
+                  }
+                }
+              }
+            }
+        end
 
         server:setup(opts)
     end)
@@ -464,26 +460,10 @@ lua <<EOF
         capabilities = capabilities
     }
 
-    require("rust-tools").setup({
-        tools = {
-            autoSetHints = true,
-            hover_with_actions = true,
-            inlay_hints = {
-                only_current_line = false,
-                show_parameter_hints = true,
-                parameter_hints_prefix = ':',
-                other_hints_prefix = ':',
-            },
-        },
-        server = {
-            capabilities = capabilities,
-            settings = {
-                ["rust-analyzer"] = {
-                    checkOnSave = { command = 'clippy' }
-                }
-            }
-        }
-    })
+    require('lspconfig')['sumneko_lua'].setup {
+        capabilities = capabilities
+    }
+
 EOF
 
 " Trouble
