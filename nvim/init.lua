@@ -1,19 +1,19 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.autocommands"
-require "user.colorscheme"
-require "user.cmp"
-require "user.telescope"
-require "user.treesitter"
-require "user.autopairs"
-require "user.comment"
-require "user.gitsigns"
-require "user.lualine"
-require "user.impatient"
-require "user.illuminate"
-require "user.indentline"
-require "user.lsp"
-require "user.surround"
-require "user.trouble"
-
+require("user.options")
+require("user.keymaps")
+require("user.plugins")
+require("user.autocommands")
+require("user.colorscheme")
+require("user.cmp")
+require("user.telescope")
+require("user.treesitter")
+require("user.autopairs")
+require("user.comment")
+require("user.gitsigns")
+require("user.lualine")
+require("user.impatient")
+require("user.illuminate")
+require("user.indentline")
+require("user.lsp")
+require("user.surround")
+require("user.trouble")
+require("user.saga")
