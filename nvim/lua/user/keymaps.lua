@@ -19,12 +19,6 @@ keymap("", "0", "^")
 --   command_mode = "c",
 
 -- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
-
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
@@ -38,6 +32,21 @@ keymap("v", "p", '"_dP', opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Term --
+-- Better window navigation
+-- keymap("t", "<C-w>h", "<C-><C-n><C-w>h", opts)
+-- keymap("t", "<C-w>j", "<C-><C-n><C-w>j", opts)
+-- keymap("t", "<C-w>k", "<C-><C-n><C-w>k", opts)
+-- keymap("t", "<C-w>l", "<C-><C-n><C-w>l", opts)
+
+vim.cmd[[
+    tnoremap <C-w>h <C-\><C-n><C-w>h
+    tnoremap <C-w>j <C-\><C-n><C-w>j
+    tnoremap <C-w>k <C-\><C-n><C-w>k
+    tnoremap <C-w>l <C-\><C-n><C-w>l
+]]
+
 
 -- Plugins --
 
