@@ -23,9 +23,9 @@ M.setup = function()
   end
 
   local config = {
-    virtual_text = false, -- disable virtual text
+    virtual_text = true, 
     signs = {
-      active = signs, -- show signs
+      active = signs, 
     },
     update_in_insert = true,
     underline = true,
@@ -54,6 +54,7 @@ end
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   local keymap = vim.api.nvim_buf_set_keymap
+
   keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
   keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
@@ -82,9 +83,11 @@ M.on_attach = function(client, bufnr)
 
   lsp_keymaps(bufnr)
   local status_ok, illuminate = pcall(require, "illuminate")
+
   if not status_ok then
     return
   end
+
   illuminate.on_attach(client)
 end
 
