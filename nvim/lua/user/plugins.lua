@@ -76,6 +76,7 @@ return packer.startup(function(use)
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     use "RRethy/vim-illuminate" -- highlight symbols and words
+    use "folke/trouble.nvim" -- Aggregated LSP diagnostics
 
     -- Telescope
     use "nvim-telescope/telescope.nvim" -- File finder
