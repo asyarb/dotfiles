@@ -52,9 +52,9 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim") -- Status line at the bottom of the editor
 	use("lewis6991/impatient.nvim") -- Faster Lua module loading
 	use("lukas-reineke/indent-blankline.nvim") -- Smart indentions for editing
+	use("tpope/vim-surround") -- Surround
 	use("tpope/vim-repeat") -- Make . not suck
 	use("christoomey/vim-tmux-navigator") -- Allow seamless navigation between buffers and tmux
-	use("kylechui/nvim-surround") -- Surround
 
 	-- Language Plugins that don't have LSP
 	use("edgedb/edgedb-vim")
