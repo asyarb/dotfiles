@@ -79,14 +79,20 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end
 
-M.on_attach = function(client, bufnr)
-	-- Use prettier to handle formatting of tsserver files
-	if client.name == "tsserver" then
-		client.resolved_capabilities.document_formatting = false
-	end
+-- Disable LSP based formatting for these servers since null-ls will handle it.
+local servers_with_formatters = {
+	"sumneko_lua",
+	"tsserver",
+	"jsonls",
+	"cssls",
+	"html",
+}
 
-	if client.name == "sumneko_lua" then
-		client.resolved_capabilities.document_formatting = false
+M.on_attach = function(client, bufnr)
+	for _, server in pairs(servers_with_formatters) do
+		if client.name == server then
+			client.resolved_capabilities.document_formatting = false
+		end
 	end
 
 	lsp_keymaps(bufnr)
