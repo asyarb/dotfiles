@@ -52,7 +52,6 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim") -- Status line at the bottom of the editor
 	use("lewis6991/impatient.nvim") -- Faster Lua module loading
 	use("lukas-reineke/indent-blankline.nvim") -- Smart indentions for editing
-	use("tpope/vim-vinegar") -- Make netrw not suck
 	use("tpope/vim-repeat") -- Make . not suck
 	use("christoomey/vim-tmux-navigator") -- Allow seamless navigation between buffers and tmux
 	use("kylechui/nvim-surround") -- Surround
@@ -82,6 +81,16 @@ return packer.startup(function(use)
 	use("RRethy/vim-illuminate") -- highlight symbols and words
 	use("folke/trouble.nvim") -- Aggregated LSP diagnostics
 	use("glepnir/lspsaga.nvim") -- UI elements for LSP workflows
+
+	-- File Tree
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"kyazdani42/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		},
+	})
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim") -- File finder
