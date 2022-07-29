@@ -43,7 +43,7 @@ packer.init({
 return packer.startup(function(use)
 	-- My plugins here
 	use("wbthomason/packer.nvim") -- Have packer manage itself
-    use("nvim-lua/popup.nvim") -- Useful lua functions for popups used by other plugins
+	use("nvim-lua/popup.nvim") -- Useful lua functions for popups used by other plugins
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim") -- Comment engine
@@ -56,6 +56,9 @@ return packer.startup(function(use)
 	use("tpope/vim-repeat") -- Make . not suck
 	use("christoomey/vim-tmux-navigator") -- Allow seamless navigation between buffers and tmux
 	use("kylechui/nvim-surround") -- Surround
+
+	-- Language Plugins that don't have LSP
+	use("edgedb/edgedb-vim")
 
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
