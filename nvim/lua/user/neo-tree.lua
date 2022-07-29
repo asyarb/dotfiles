@@ -81,8 +81,8 @@ neotree.setup({
 		},
 		mappings = {
 			["<cr>"] = "open",
-			["C"] = "close_node",
-			["z"] = "close_all_nodes",
+			-- ["C"] = "close_node",
+			-- ["z"] = "close_all_nodes",
 			["%"] = {
 				"add",
 				-- some commands may take optional config options, see `:h neo-tree-mappings` for details
