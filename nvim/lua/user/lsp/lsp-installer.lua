@@ -12,6 +12,9 @@ local servers = {
 	"bashls",
 	"jsonls",
 	"yamlls",
+	"prismals",
+	"tailwindcss",
+	"vimls",
 }
 
 lsp_installer.setup()
@@ -37,6 +40,11 @@ for _, server in pairs(servers) do
 	if server == "pyright" then
 		local pyright_opts = require("user.lsp.settings.pyright")
 		opts = vim.tbl_deep_extend("force", pyright_opts, opts)
+	end
+
+	if server == "tsserver" then
+		local tsserver_opts = require("user.lsp.settings.tsserver")
+		opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
 	end
 
 	lspconfig[server].setup(opts)
