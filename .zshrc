@@ -43,12 +43,11 @@ alias wwssh="ssh -i ~/.ssh/ww_id_rsa"
 alias wwssh2="ssh -i ~/.ssh/ww_id_rsa_old"
 
 # PATH additions because... this is how I know to do it
-export PNPM_HOME="/home/asyarb/.local/share/pnpm"
 export NPM_GLOBAL="/home/asyarb/.npm-global/bin"
 export RBENV="/home/asyarb/.rbenv/bin"
 GO="/usr/local/go/bin"
 
-export PATH="$PNPM_HOME:$NPM_GLOBAL:$GO:$RBENV:$PATH"
+export PATH="$NPM_GLOBAL:$GO:$RBENV:$PATH"
 
 # RBEnv polluting my config
 eval "$(rbenv init - zsh)"
