@@ -81,6 +81,7 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("RRethy/vim-illuminate") -- highlight symbols and words
 	use("folke/trouble.nvim") -- Aggregated LSP diagnostics
+	use("ray-x/lsp_signature.nvim") -- Function signature highlight as you type
 	use({
 		"CosmicNvim/cosmic-ui",
 		requires = {
