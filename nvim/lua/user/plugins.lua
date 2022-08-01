@@ -36,7 +36,9 @@ packer.init({
 		open_fn = function()
 			return require("packer.util").float({ border = "rounded" })
 		end,
+		prompt_border = "rounded",
 	},
+	auto_clean = true,
 })
 
 -- Install your plugins here
@@ -45,7 +47,8 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim") -- Useful lua functions for popups used by other plugins
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
-	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
+	use("windwp/nvim-autopairs") -- Autopairs, integrates with cmp and treesitter
+	use("windwp/nvim-ts-autotag") -- Autotags, integrates with cmp and treesitter
 	use("numToStr/Comment.nvim") -- Comment engine
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- Context aware commenting, such as in JSX
 	use("kyazdani42/nvim-web-devicons") -- Icons
@@ -97,6 +100,11 @@ return packer.startup(function(use)
 		},
 	})
 
+	-- Todo comments
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+	})
 	-- Telescope
 	use("nvim-telescope/telescope.nvim") -- File finder
 	use("nvim-telescope/telescope-media-files.nvim") -- Allow media files to be previewed.

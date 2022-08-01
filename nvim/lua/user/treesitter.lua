@@ -12,8 +12,16 @@ configs.setup({
 		enable = true, -- false will disable the whole extension
 		disable = { "markdown" }, -- list of language that will be disabled
 	},
+	indent = { enable = true, disable = { "python" } },
 	autopairs = {
 		enable = true,
+	},
+	autotag = {
+		enable = true,
+	},
+	context_commentstring = {
+		enable = true,
+		enable_autocmd = false,
 	},
 	rainbow = {
 		enable = true,
@@ -21,5 +29,4 @@ configs.setup({
 		colors = { "#E5c07B", "#C678DD", "#56B6C2" },
 		termcolors = { "lightblue", "lightyellow", "lightcyan", "lightmagenta" },
 	},
-	indent = { enable = true, disable = { "python" } },
 })
