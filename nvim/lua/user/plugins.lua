@@ -105,6 +105,10 @@ return packer.startup(function(use)
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
 	})
+
+	-- Notifications
+	use("rcarriga/nvim-notify") -- Notification windows
+
 	-- Telescope
 	use("nvim-telescope/telescope.nvim") -- File finder
 	use("nvim-telescope/telescope-media-files.nvim") -- Allow media files to be previewed.
