@@ -85,6 +85,7 @@ return packer.startup(function(use)
 			"MunifTanjim/nui.nvim",
 		},
 	}) -- LSP UI elements
+	use("jose-elias-alvarez/typescript.nvim")
 
 	-- File Tree
 	use({

@@ -45,6 +45,9 @@ for _, server in pairs(servers) do
 	if server == "tsserver" then
 		local tsserver_opts = require("user.lsp.settings.tsserver")
 		opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
+
+        require("typescript").setup({ server = opts })
+        goto continue
 	end
 
 	if server == "jsonls" then
@@ -53,4 +56,6 @@ for _, server in pairs(servers) do
 	end
 
 	lspconfig[server].setup(opts)
+
+    ::continue::
 end
