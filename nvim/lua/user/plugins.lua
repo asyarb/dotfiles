@@ -57,9 +57,6 @@ return packer.startup(function(use)
 	use("tpope/vim-repeat") -- Make . not suck
 	use("christoomey/vim-tmux-navigator") -- Allow seamless navigation between buffers and tmux
 
-	-- Language Plugins that don't have LSP
-	use("edgedb/edgedb-vim")
-
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
 
@@ -81,7 +78,13 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("RRethy/vim-illuminate") -- highlight symbols and words
 	use("folke/trouble.nvim") -- Aggregated LSP diagnostics
-	use("glepnir/lspsaga.nvim") -- UI elements for LSP workflows
+	use({
+		"CosmicNvim/cosmic-ui",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+		},
+	}) -- LSP UI elements
 
 	-- File Tree
 	use({
