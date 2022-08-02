@@ -1,9 +1,7 @@
 local M = {}
 
-local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_cmp_ok then
-	return
-end
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
+local utils = require("user.utils")
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -77,31 +75,30 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end
 
--- Disable LSP based formatting for these servers since null-ls will handle it.
-local servers_with_formatters = {
+local lsp_with_external_formatter = {
 	"sumneko_lua",
 	"tsserver",
 	"jsonls",
 	"cssls",
 	"html",
-	"rust_analyzer",
 }
 
 M.on_attach = function(client, bufnr)
-	for _, server in pairs(servers_with_formatters) do
+	-- Disable LSP based formatting for these servers since null-ls will handle
+	-- it directly.
+	for _, server in pairs(lsp_with_external_formatter) do
 		if client.name == server then
 			client.resolved_capabilities.document_formatting = false
 		end
 	end
 
-	lsp_keymaps(bufnr)
-	local status_ok, illuminate = pcall(require, "illuminate")
-
-	if not status_ok then
-		return
+	-- Otherwise, use the LSP to enable formatting.
+	if client.supports_method("textDocument/formatting") then
+		utils.enable_format_on_save(client, bufnr)
 	end
 
-	illuminate.on_attach(client)
+	lsp_keymaps(bufnr)
+	require("illuminate").on_attach(client)
 end
 
 return M

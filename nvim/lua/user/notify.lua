@@ -1,9 +1,4 @@
-local status_ok, notify = pcall(require, "notify")
-if not status_ok then
-	return
-end
-
-notify.setup({
+require("notify").setup({
 	{
 		background_colour = "Normal",
 		fps = 30,
@@ -18,6 +13,6 @@ notify.setup({
 		minimum_width = 50,
 		render = "default",
 		stages = "fade",
-		timeout = 5000,
+		timeout = 4000,
 	},
 })

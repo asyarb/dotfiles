@@ -1,8 +1,3 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
-if not status_ok then
-	return
-end
-
 -- Add LSP server to this list after installing
 local servers = {
 	"sumneko_lua",
@@ -20,12 +15,9 @@ local servers = {
     "taplo"
 }
 
-lsp_installer.setup()
+require("nvim-lsp-installer").setup()
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-	return
-end
+local lspconfig = require("lspconfig")
 
 local opts = {}
 
