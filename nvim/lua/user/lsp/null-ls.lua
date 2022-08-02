@@ -6,7 +6,7 @@ end
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-local diagnostics = null_ls.builtins.diagnostics
+-- local diagnostics = null_ls.builtins.diagnostics
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
@@ -16,13 +16,9 @@ null_ls.setup({
 		formatting.prettierd.with({
 			extra_filetypes = { "toml" },
 		}),
-		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
-		formatting.google_java_format,
 		formatting.prismaFmt,
 		formatting.rustfmt,
-
-		diagnostics.flake8,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then

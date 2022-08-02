@@ -48,11 +48,20 @@ for _, server in pairs(servers) do
 		opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
 
         require("typescript").setup({ server = opts })
+
         goto continue
 	end
 
     if server == "rust_analyzer" then
-        require('rust-tools').setup({})
+        local rust_opts = {
+            on_attach = opts.on_attach,
+            capabilities = opts.capabilities,
+            settings = require("user.lsp.settings.rust_analyzer")
+        }
+
+        require('rust-tools').setup({ server = rust_opts })
+
+        goto continue
     end
 
 	if server == "jsonls" then
