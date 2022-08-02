@@ -3,6 +3,7 @@ if not status_ok then
 	return
 end
 
+-- Add LSP server to this list after installing
 local servers = {
 	"sumneko_lua",
 	"cssls",
@@ -15,7 +16,8 @@ local servers = {
 	"prismals",
 	"tailwindcss",
 	"vimls",
-    "rust_analyzer"
+    "rust_analyzer",
+    "taplo"
 }
 
 lsp_installer.setup()
