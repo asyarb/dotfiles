@@ -20,6 +20,7 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.google_java_format,
 		formatting.prismaFmt,
+		formatting.rustfmt,
 
 		diagnostics.flake8,
 	},

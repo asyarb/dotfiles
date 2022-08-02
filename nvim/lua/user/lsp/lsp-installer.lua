@@ -15,6 +15,7 @@ local servers = {
 	"prismals",
 	"tailwindcss",
 	"vimls",
+    "rust_analyzer"
 }
 
 lsp_installer.setup()
@@ -49,6 +50,10 @@ for _, server in pairs(servers) do
         require("typescript").setup({ server = opts })
         goto continue
 	end
+
+    if server == "rust_analyzer" then
+        require('rust-tools').setup({})
+    end
 
 	if server == "jsonls" then
 		local jsonls_opts = require("user.lsp.settings.jsonls")

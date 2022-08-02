@@ -84,6 +84,7 @@ local servers_with_formatters = {
 	"jsonls",
 	"cssls",
 	"html",
+	"rust_analyzer",
 }
 
 M.on_attach = function(client, bufnr)

@@ -88,8 +88,11 @@ return packer.startup(function(use)
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
 		},
-	}) -- LSP UI elements
-	use("jose-elias-alvarez/typescript.nvim")
+	})
+
+	-- LSP Language Server Helpers
+	use("jose-elias-alvarez/typescript.nvim") -- TypeScript
+	use("simrat39/rust-tools.nvim") -- Rust
 
 	-- File Tree
 	use({
