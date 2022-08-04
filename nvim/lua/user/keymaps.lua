@@ -55,5 +55,8 @@ keymap("n", "<leader>ggs", ":Telescope git_status<cr>", opts)
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
 
--- Open Neotree
+-- Neotree
 keymap("n", "-", ":Neotree filesystem reveal current<CR>", opts)
+
+-- Floaterm
+keymap("n", "<leader>tt", ":FloatermToggle<CR>", opts)

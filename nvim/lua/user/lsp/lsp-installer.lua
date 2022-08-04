@@ -12,7 +12,8 @@ local servers = {
 	"tailwindcss",
 	"vimls",
     "rust_analyzer",
-    "taplo"
+    "taplo",
+    "sqls"
 }
 
 require("nvim-lsp-installer").setup()
