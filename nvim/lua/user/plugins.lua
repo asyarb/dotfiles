@@ -47,6 +47,7 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim") -- Useful lua functions for popups used by other plugins
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
+	use("MunifTanjim/nui.nvim") -- Useful NVIM UI utilities used by lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with cmp and treesitter
 	use("windwp/nvim-ts-autotag") -- Autotags, integrates with cmp and treesitter
 	use("numToStr/Comment.nvim") -- Comment engine
@@ -82,33 +83,17 @@ return packer.startup(function(use)
 	use("RRethy/vim-illuminate") -- highlight symbols and words
 	use("folke/trouble.nvim") -- Aggregated LSP diagnostics
 	use("ray-x/lsp_signature.nvim") -- Function signature highlight as you type
-	use({
-		"CosmicNvim/cosmic-ui",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"MunifTanjim/nui.nvim",
-		},
-	})
+	use("CosmicNvim/cosmic-ui") -- Pretty UI for common LSP actions
 
 	-- LSP Language Server Helpers
 	use("jose-elias-alvarez/typescript.nvim") -- TypeScript
 	use("simrat39/rust-tools.nvim") -- Rust
 
 	-- File Tree
-	use({
-		"nvim-neo-tree/neo-tree.nvim",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"kyazdani42/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
-	})
+	use("nvim-neo-tree/neo-tree.nvim")
 
 	-- Todo comments
-	use({
-		"folke/todo-comments.nvim",
-		requires = "nvim-lua/plenary.nvim",
-	})
+	use("folke/todo-comments.nvim")
 
 	-- Notifications
 	use("rcarriga/nvim-notify") -- Notification windows

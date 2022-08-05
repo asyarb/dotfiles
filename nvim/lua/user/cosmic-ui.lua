@@ -1,3 +1,1 @@
-require("cosmic-ui").setup({
-	border_style = "rounded",
-})
+require("cosmic-ui").setup({ border_style = "rounded" })
