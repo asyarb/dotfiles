@@ -13,7 +13,8 @@ local servers = {
 	"vimls",
     "rust_analyzer",
     "taplo",
-    "sqls"
+    "sqls",
+    "eslint"
 }
 
 require("nvim-lsp-installer").setup()
