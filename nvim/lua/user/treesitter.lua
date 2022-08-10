@@ -1,11 +1,10 @@
 require("nvim-treesitter.configs").setup({
-	ensure_installed = "", -- one of "all" or a list of languages
+	ensure_installed = "",
 	sync_install = false,
-	auto_install = true, -- Automatically install missing parsers when entering buffer
-	ignore_install = { "" }, -- List of parsers to ignore installing
+	auto_install = true,
+	ignore_install = { "" },
 	highlight = {
-		enable = true, -- false will disable the whole extension
-		disable = { "markdown" }, -- list of language that will be disabled
+		enable = true,
 		additional_vim_regex_highlighting = true,
 	},
 	indent = { enable = true, disable = { "python" } },

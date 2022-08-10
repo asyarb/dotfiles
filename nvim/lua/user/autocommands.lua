@@ -9,11 +9,18 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
--- Set wrap and spell in markdown and gitcommit
+-- Autowrap in Markdown and gitcommit files.
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "gitcommit", "markdown" },
 	callback = function()
 		vim.opt_local.wrap = true
+	end,
+})
+
+-- Check spelling in gitcommit.
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = { "gitcommit" },
+	callback = function()
 		vim.opt_local.spell = true
 	end,
 })

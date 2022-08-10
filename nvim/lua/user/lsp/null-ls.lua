@@ -13,6 +13,13 @@ null_ls.setup({
 		formatting.prettierd,
 		formatting.stylua,
 		formatting.prismaFmt,
+		formatting.sqlfluff.with({
+			extra_args = { "--dialect", "postgres" },
+		}),
+
+		diagnostics.sqlfluff.with({
+			extra_args = { "--dialect", "postgres" },
+		}),
 	},
 
 	-- Format on save

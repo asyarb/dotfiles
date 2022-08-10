@@ -60,6 +60,7 @@ return packer.startup(function(use)
 	use("tpope/vim-surround") -- Surround
 	use("tpope/vim-repeat") -- Make . not suck
 	use("christoomey/vim-tmux-navigator") -- Allow seamless navigation between buffers and tmux
+	use("preservim/vim-markdown") -- Helpful markdown utils
 
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
