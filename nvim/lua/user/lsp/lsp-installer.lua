@@ -14,6 +14,7 @@ local servers = {
     "rust_analyzer",
     "taplo",
     "sqls",
+    "svelte",
     "eslint"
 }
 
