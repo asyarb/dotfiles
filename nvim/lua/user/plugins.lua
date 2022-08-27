@@ -101,7 +101,6 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim") -- File finder
-	use("nvim-telescope/telescope-media-files.nvim") -- Allow media files to be previewed.
 
 	-- Treesitter
 	use("nvim-treesitter/nvim-treesitter") -- Semantic highlighting

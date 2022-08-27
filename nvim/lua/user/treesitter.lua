@@ -8,12 +8,8 @@ require("nvim-treesitter.configs").setup({
 		additional_vim_regex_highlighting = true,
 	},
 	indent = { enable = true, disable = { "python", "rust" } },
-	autopairs = {
-		enable = true,
-	},
-	autotag = {
-		enable = true,
-	},
+	autopairs = { enable = true },
+	autotag = { enable = true },
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,

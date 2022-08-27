@@ -2,7 +2,6 @@ local telescope = require("telescope")
 
 local actions = require("telescope.actions")
 
-telescope.load_extension("media_files")
 telescope.load_extension("notify")
 
 telescope.setup({
@@ -25,10 +24,5 @@ telescope.setup({
 			},
 		},
 	},
-	extensions = {
-		media_files = {
-			filetypes = { "png", "webp", "jpg", "jpeg", "mp4", "webm", "pdf" },
-			find_cmd = "rg", -- find command (defaults to `fd`)
-		},
-	},
+	extensions = {},
 })
