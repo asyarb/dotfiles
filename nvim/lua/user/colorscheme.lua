@@ -1,4 +1,4 @@
-local colorscheme = "tokyonight"
+local colorscheme = "tokyonight-night"
 
 vim.g.tokyonight_style = "night"
 vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer", "help", "Trouble" }
