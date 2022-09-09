@@ -60,3 +60,8 @@ source /usr/share/doc/fzf/examples/completion.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# pnpm
+export PNPM_HOME="/home/asyarb/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

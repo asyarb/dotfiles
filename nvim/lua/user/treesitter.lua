@@ -7,7 +7,7 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 		additional_vim_regex_highlighting = true,
 	},
-	indent = { enable = true, disable = { "python", "rust" } },
+	indent = { enable = true, disable = { "python" } },
 	autopairs = { enable = true },
 	autotag = { enable = true },
 	context_commentstring = {
@@ -17,7 +17,6 @@ require("nvim-treesitter.configs").setup({
 	rainbow = {
 		enable = true,
 		extended_mode = false,
-		colors = { "#E5c07B", "#C678DD", "#56B6C2" },
-		termcolors = { "lightblue", "lightyellow", "lightcyan", "lightmagenta" },
+		colors = { "#E5C07B", "#C678DD", "#56B6C2" },
 	},
 })
