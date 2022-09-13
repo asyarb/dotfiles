@@ -15,7 +15,8 @@ local servers = {
     "taplo",
     "sqls",
     "svelte",
-    "eslint"
+    "eslint",
+    "emmet_ls"
 }
 
 require("nvim-lsp-installer").setup()
