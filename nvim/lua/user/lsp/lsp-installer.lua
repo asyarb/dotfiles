@@ -16,6 +16,7 @@ local servers = {
 	"sqls",
 	"svelte",
 	"eslint",
+	"emmet_ls",
 }
 
 require("nvim-lsp-installer").setup()

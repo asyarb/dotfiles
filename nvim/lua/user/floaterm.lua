@@ -1,7 +1,6 @@
 local utils = require("user.utils")
 local g = vim.g
 local title = vim.env.SHELL
-local set
 
 g.floaterm_width = 0.7
 g.floaterm_height = 0.8
