@@ -50,6 +50,11 @@ for _, server in pairs(servers) do
 		goto continue
 	end
 
+	if server == "tailwindcss" then
+		local tailwind_opts = require("user.lsp.settings.tailwindcss")
+		opts = vim.tbl_deep_extend("force", tailwind_opts, opts)
+	end
+
 	if server == "rust_analyzer" then
 		local rust_opts = {
 			on_attach = opts.on_attach,
