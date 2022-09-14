@@ -11,11 +11,11 @@ local servers = {
 	"prismals",
 	"tailwindcss",
 	"vimls",
-    "rust_analyzer",
-    "taplo",
-    "sqls",
-    "svelte",
-    "eslint"
+	"rust_analyzer",
+	"taplo",
+	"sqls",
+	"svelte",
+	"eslint",
 }
 
 require("nvim-lsp-installer").setup()
@@ -44,22 +44,22 @@ for _, server in pairs(servers) do
 		local tsserver_opts = require("user.lsp.settings.tsserver")
 		opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
 
-        require("typescript").setup({ server = opts })
+		require("typescript").setup({ server = opts })
 
-        goto continue
+		goto continue
 	end
 
-    if server == "rust_analyzer" then
-        local rust_opts = {
-            on_attach = opts.on_attach,
-            capabilities = opts.capabilities,
-            settings = require("user.lsp.settings.rust_analyzer")
-        }
+	if server == "rust_analyzer" then
+		local rust_opts = {
+			on_attach = opts.on_attach,
+			capabilities = opts.capabilities,
+			settings = require("user.lsp.settings.rust_analyzer"),
+		}
 
-        require('rust-tools').setup({ server = rust_opts })
+		require("rust-tools").setup({ server = rust_opts })
 
-        goto continue
-    end
+		goto continue
+	end
 
 	if server == "jsonls" then
 		local jsonls_opts = require("user.lsp.settings.jsonls")
@@ -68,5 +68,5 @@ for _, server in pairs(servers) do
 
 	lspconfig[server].setup(opts)
 
-    ::continue::
+	::continue::
 end
