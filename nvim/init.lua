@@ -1,4 +1,5 @@
 require("user.options")
+require("user.fixes")
 require("user.tokyonight")
 require("user.keymaps")
 require("user.plugins")

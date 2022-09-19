@@ -40,3 +40,6 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 		vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
 	end,
 })
+
+-- Set CSS files to be parsed as SCSS
+vim.cmd("au BufNewFile,BufRead *.css set filetype=scss")

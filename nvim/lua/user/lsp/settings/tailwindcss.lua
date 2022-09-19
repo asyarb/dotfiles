@@ -2,7 +2,7 @@ return {
 	settings = {
 		tailwindCSS = {
 			experimental = {
-				classRegex = { "clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]", "twix\\(([^)]*)\\)" },
+				classRegex = { "clsx\\(([^)]*)\\)", "twix\\(([^)]*)\\)" },
 			},
 		},
 	},
