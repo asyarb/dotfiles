@@ -55,6 +55,11 @@ for _, server in pairs(servers) do
 		opts = vim.tbl_deep_extend("force", tailwind_opts, opts)
 	end
 
+	if server == "denols" then
+		local deno_opts = require("user.lsp.settings.denols")
+		opts = vim.tbl_deep_extend("force", deno_opts, opts)
+	end
+
 	if server == "rust_analyzer" then
 		local rust_opts = {
 			on_attach = opts.on_attach,

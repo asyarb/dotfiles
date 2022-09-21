@@ -107,7 +107,6 @@ M.on_attach = function(client, bufnr)
 	end
 
 	lsp_keymaps(bufnr)
-	require("illuminate").on_attach(client)
 end
 
 return M

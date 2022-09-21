@@ -10,12 +10,15 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettierd,
+		formatting.prettierd.with({
+			env = { PRETTIERD_LOCAL_PRETTIER_ONLY = 1 },
+		}),
 		formatting.stylua,
 		formatting.prismaFmt,
 		formatting.sqlfluff.with({
 			extra_args = { "--dialect", "postgres" },
 		}),
+		--[[ null_ls.builtins.formatting.deno_fmt, ]]
 
 		diagnostics.sqlfluff.with({
 			extra_args = { "--dialect", "postgres" },

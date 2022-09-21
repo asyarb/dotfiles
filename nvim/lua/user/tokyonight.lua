@@ -1,8 +1,6 @@
 require("tokyonight").setup({
 	style = "night",
-	sidebars = { "qf", "vista_kind", "terminal", "packer", "help", "Trouble" },
-	dim_inactive = true,
-	transparent = true,
+	sidebars = { "qf", "vista_kind", "terminal", "packer" },
 })
 
 local colorscheme = "tokyonight"
