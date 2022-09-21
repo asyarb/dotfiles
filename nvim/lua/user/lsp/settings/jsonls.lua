@@ -44,6 +44,13 @@ local schemas = {
 		},
 		url = "https://json.schemastore.org/package.json",
 	},
+	{
+		description = "Deno configuration file",
+		fileMatch = {
+			"deno.json",
+		},
+		url = "https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json",
+	},
 }
 
 return {

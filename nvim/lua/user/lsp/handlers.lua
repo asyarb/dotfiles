@@ -90,6 +90,7 @@ local lsp_with_external_formatter = {
 	"cssls",
 	"html",
 	"sqls",
+	"denols",
 }
 
 M.on_attach = function(client, bufnr)

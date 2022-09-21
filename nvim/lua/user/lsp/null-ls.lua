@@ -18,7 +18,7 @@ null_ls.setup({
 		formatting.sqlfluff.with({
 			extra_args = { "--dialect", "postgres" },
 		}),
-		--[[ null_ls.builtins.formatting.deno_fmt, ]]
+		null_ls.builtins.formatting.deno_fmt,
 
 		diagnostics.sqlfluff.with({
 			extra_args = { "--dialect", "postgres" },
