@@ -23,6 +23,16 @@ if is_wsl then
 	}
 end
 
+-- huh?
+vim.g.do_filetype_lua = 1
+vim.g.did_load_filetypes = 0
+
+vim.filetype.add({
+	extension = {
+		astro = "astro",
+	},
+})
+
 o.backup = false -- creates a backup file
 o.swapfile = false -- creates a swapfile
 o.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited

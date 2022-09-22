@@ -18,6 +18,7 @@ local servers = {
 	"eslint",
 	"emmet_ls",
 	"denols",
+    "astro"
 }
 
 require("nvim-lsp-installer").setup()
