@@ -24,11 +24,7 @@ vim.cmd([[
     augroup end
 ]])
 
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-	return
-end
+local packer = require("packer")
 
 -- Have packer use a popup window
 packer.init({
@@ -43,18 +39,14 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-	-- My plugins here
+	-- Pre-requisite plugins
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim") -- Useful lua functions for popups used by other plugins
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
 	use("MunifTanjim/nui.nvim") -- Useful UI utilities used by lots of plugins
-	use("windwp/nvim-autopairs") -- Autopairs, integrates with cmp and treesitter
-	use("windwp/nvim-ts-autotag") -- Autotags, integrates with cmp and treesitter
-	use("numToStr/Comment.nvim") -- Comment engine
-	use("JoosepAlviste/nvim-ts-context-commentstring") -- Context aware commenting, such as in JSX
-	use("kyazdani42/nvim-web-devicons") -- Icons
-	use("nvim-lualine/lualine.nvim") -- Status line at the bottom of the editor
 	use("lewis6991/impatient.nvim") -- Faster Lua module loading
+
+	-- General Usage and Motions
 	use("lukas-reineke/indent-blankline.nvim") -- Smart indentions for editing
 	use("tpope/vim-abolish") -- Helpful utilities for manipulating words/casing
 	use("tpope/vim-surround") -- Surround
@@ -62,10 +54,18 @@ return packer.startup(function(use)
 	use("christoomey/vim-tmux-navigator") -- Allow seamless navigation between buffers and tmux
 	use("preservim/vim-markdown") -- Helpful markdown utils
 
-	-- Colorschemes
-	use("folke/tokyonight.nvim")
+	-- Comments
+	use("numToStr/Comment.nvim") -- Comment engine
+	use("JoosepAlviste/nvim-ts-context-commentstring") -- Context aware commenting, such as in JSX
 
-	-- cmp plugins
+	-- UI
+	use("kyazdani42/nvim-web-devicons") -- Icons
+	use("nvim-lualine/lualine.nvim") -- Status line at the bottom of the editor
+	use({ "catppuccin/nvim", as = "catppuccin" }) -- Colorscheme
+	use("folke/todo-comments.nvim") -- Todo comments and task management
+	use("rcarriga/nvim-notify") -- Notification windows
+
+	-- Completions
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
 	use("hrsh7th/cmp-path") -- path completions
@@ -73,9 +73,8 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp") -- LSP comletions
 	use("hrsh7th/cmp-nvim-lua") -- nvim runtime completions in Lua
 
-	-- snippets
+	-- cmp snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
-	--[[ use("rafamadriz/friendly-snippets") -- a bunch of snippets to use ]]
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
@@ -85,19 +84,11 @@ return packer.startup(function(use)
 	use("folke/trouble.nvim") -- Aggregated LSP diagnostics
 	use("ray-x/lsp_signature.nvim") -- Function signature highlight as you type
 	use("CosmicNvim/cosmic-ui") -- Pretty UI for common LSP actions
-
-	-- LSP Language Server Helpers
 	use("jose-elias-alvarez/typescript.nvim") -- TypeScript
 	use("simrat39/rust-tools.nvim") -- Rust
 
 	-- File Tree
 	use("nvim-neo-tree/neo-tree.nvim")
-
-	-- Todo comments
-	use("folke/todo-comments.nvim")
-
-	-- Notifications
-	use("rcarriga/nvim-notify") -- Notification windows
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim") -- File finder
@@ -105,11 +96,13 @@ return packer.startup(function(use)
 	-- Treesitter
 	use("nvim-treesitter/nvim-treesitter") -- Semantic highlighting
 	use("p00f/nvim-ts-rainbow") -- Rainbow brackets
+	use("windwp/nvim-autopairs") -- Autopairs, integrates with cmp and treesitter
+	use("windwp/nvim-ts-autotag") -- Autotags, integrates with cmp and treesitter
 
 	-- Git
-	use("lewis6991/gitsigns.nvim") -- Git gutter signs
+	use("lewis6991/gitsigns.nvim") -- Gutter signs
 
-	-- Floating Terminal
+	-- Terminal
 	use("voldikss/vim-floaterm")
 
 	-- Automatically set up your configuration after cloning packer.nvim
