@@ -69,18 +69,16 @@ local function lsp_keymaps(bufnr)
 
 	keymap(bufnr, "n", "<leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 
-	-- keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-	-- keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-
 	map("n", "<leader>rn", '<cmd>lua require("cosmic-ui").rename()<cr>')
 	map("n", "<leader>ca", '<cmd>lua require("cosmic-ui").code_actions()<cr>')
 	map("v", "<leader>ca", '<cmd>lua require("cosmic-ui").range_code_actions()<cr>')
 
 	keymap(bufnr, "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
 	keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
-	keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+	keymap(bufnr, "n", "<leader>lq", "<cmd>TroubleToggle document_diagnostics<CR>", opts)
+	keymap(bufnr, "n", "<leader>lQ", "<cmd>TroubleToggle workspace_diagnostics<CR>", opts)
 
-	-- keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
+	keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 end
 
 local lsp_with_external_formatter = {

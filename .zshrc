@@ -23,8 +23,8 @@ alias cd..="cd .."
 alias wget="wget -c"
 
 # Modern CLI tool equivalents
-alias sl="exa"
-alias ls="exa"
+alias sl="exa --icons"
+alias ls="exa --icons"
 alias bat="batcat"
 alias fd="fdfind"
 
@@ -44,10 +44,11 @@ alias wwssh2="ssh -i ~/.ssh/ww_id_rsa_old"
 
 # PATH additions because... this is how I know to do it
 export NPM_GLOBAL="/home/asyarb/.npm-global/bin"
+export PNPM_HOME="/home/asyarb/.local/share/pnpm"
 export RBENV="/home/asyarb/.rbenv/bin"
 GO="/usr/local/go/bin"
 
-export PATH="$NPM_GLOBAL:$GO:$RBENV:$PATH"
+export PATH="$NPM_GLOBAL:$GO:$RBENV:$PNPM_HOME:$PATH"
 
 # RBEnv polluting my config
 eval "$(rbenv init - zsh)"
@@ -61,7 +62,3 @@ source /usr/share/doc/fzf/examples/completion.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# pnpm
-export PNPM_HOME="/home/asyarb/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
