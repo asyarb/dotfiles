@@ -32,7 +32,7 @@ alias fd="fdfind"
 alias open="explorer.exe"
 alias trash="rm -rf"
 
-alias termconf="nvim /mnt/c/Users/Anthony/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
+alias termconf="nvim /mnt/c/Users/Anthony/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json"
 
 # ZSH stuff
 alias zshconfig="mate ~/.zshrc"
