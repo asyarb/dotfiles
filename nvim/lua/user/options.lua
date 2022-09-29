@@ -30,6 +30,7 @@ vim.g.did_load_filetypes = 0
 vim.filetype.add({
 	extension = {
 		astro = "astro",
+		css = "scss",
 	},
 })
 
