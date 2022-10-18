@@ -29,9 +29,20 @@ M.setup = function()
 			focusable = true,
 			style = "minimal",
 			border = "rounded",
-			source = "always",
+			source = "if_many",
 			header = "",
 			prefix = "",
+			format = function(diagnostic)
+				if diagnostic.source == "eslint" then
+					return string.format(
+						"%s [%s]",
+						diagnostic.message,
+						-- shows the name of the rule
+						diagnostic.user_data.lsp.code
+					)
+				end
+				return string.format("%s [%s]", diagnostic.message, diagnostic.source)
+			end,
 		},
 	})
 
