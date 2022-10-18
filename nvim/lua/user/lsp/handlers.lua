@@ -3,8 +3,6 @@ local M = {}
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local utils = require("user.utils")
 
---[[ M.capabilities = vim.lsp.protocol.make_client_capabilities() ]]
---[[ M.capabilities.textDocument.completion.completionItem.snippetSupport = true ]]
 M.capabilities = cmp_nvim_lsp.default_capabilities()
 
 M.setup = function()
@@ -96,7 +94,7 @@ M.on_attach = function(client, bufnr)
 	-- it directly.
 	for _, server in pairs(lsp_with_external_formatter) do
 		if client.name == server then
-			client.resolved_capabilities.document_formatting = false
+			client.server_capabilities.document_formatting = false
 		end
 	end
 

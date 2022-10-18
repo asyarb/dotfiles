@@ -1,8 +1,6 @@
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
 require("catppuccin").setup({
-	transparent_background = false,
-	term_colors = false,
 	integrations = {
 		telescope = true,
 		lsp_trouble = true,
@@ -40,4 +38,4 @@ require("catppuccin").setup({
 	},
 })
 
-vim.cmd([[colorscheme catppuccin]])
+vim.api.nvim_command("colorscheme catppuccin")

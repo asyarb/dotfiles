@@ -9,4 +9,4 @@ if not status_ok then
 	return
 end
 
-vim.cmd([[colorscheme tokyonight]])
+vim.api.nvim_command("colorscheme tokyonight")
