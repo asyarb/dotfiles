@@ -17,7 +17,6 @@ null_ls.setup({
 			end,
 		}),
 		formatting.stylua,
-		formatting.prismaFmt,
 		formatting.sqlfluff.with({
 			extra_args = { "--dialect", "postgres" },
 		}),

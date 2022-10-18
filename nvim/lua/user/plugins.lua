@@ -62,6 +62,7 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons") -- Icons
 	use("nvim-lualine/lualine.nvim") -- Status line at the bottom of the editor
 	use({ "catppuccin/nvim", as = "catppuccin" }) -- Colorscheme
+	use("folke/tokyonight.nvim") -- Tokyonight colorscheme alt.
 	use("folke/todo-comments.nvim") -- Todo comments and task management
 	use("rcarriga/nvim-notify") -- Notification windows
 

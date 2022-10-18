@@ -3,6 +3,7 @@ require("user.keymaps")
 require("user.plugins")
 require("user.autocommands")
 require("user.catppuccin")
+--[[ require("user.tokyonight") ]]
 require("user.lualine")
 require("user.cmp")
 require("user.telescope")
