@@ -43,3 +43,12 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 
 -- Set CSS files to be parsed as SCSS
 vim.cmd("au BufNewFile,BufRead *.css set filetype=scss")
+
+--  Soft wrapping
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+	callback = function()
+		vim.cmd([[
+            set wrap 
+        ]])
+	end,
+})

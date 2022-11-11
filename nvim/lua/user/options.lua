@@ -65,7 +65,6 @@ o.showcmd = false
 o.ruler = false
 o.numberwidth = 4 -- set number column width to 2 {default 4}
 o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
-o.wrap = false -- display lines as one long line
 o.scrolloff = 8 -- allow for line padding when reaching the end of files
 o.sidescrolloff = 8
 o.hidden = true -- allow for buffers to be open in the background
@@ -76,6 +75,7 @@ o.foldexpr = "nvim_treesitter#foldexpr()"
 o.foldlevel = 99
 o.guifont = "monospace:h17" -- the font used in graphical neovim applications
 o.fillchars.eob = " "
+
 o.shortmess:append("c")
 o.whichwrap:append("<,>,[,],h,l")
 o.iskeyword:append("-")
