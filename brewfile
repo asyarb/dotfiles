@@ -14,7 +14,6 @@ tap 'homebrew/cask-fonts'
 
 cask 'docker'
 cask 'google-chrome'
-cask 'iterm2'
 cask 'keepassx'
 cask 'sketch'
 cask 'visual-studio-code'
@@ -37,7 +36,6 @@ cask 'tableplus'
     brew 'neovim'
     brew 'exa'
     brew 'ripgrep'
-    brew 'batcat'
 
 # Git
     brew 'git'
