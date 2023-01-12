@@ -1,28 +1,5 @@
 local o = vim.opt
 
-local is_wsl = (function()
-	local output = vim.fn.systemlist("uname -r")
-
-	return not not string.find(output[1] or "", "WSL")
-end)()
-local is_mac = vim.fn.has("macunix") == 1
-local is_linux = not is_wsl and not is_mac
-
-if is_wsl then
-	vim.g.clipboard = { -- on WSL, need to use a system binary for system clibboard access
-		name = "win32yank-wsl",
-		copy = {
-			["+"] = "win32yank.exe -i --crlf",
-			["*"] = "win32yank.exe -i --crlf",
-		},
-		paste = {
-			["+"] = "win32yank.exe -o --lf",
-			["*"] = "win32yank.exe -o --lf",
-		},
-		cache_enabled = 0,
-	}
-end
-
 vim.filetype.add({
 	extension = {
 		astro = "astro",
