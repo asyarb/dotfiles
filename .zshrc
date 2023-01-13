@@ -46,9 +46,10 @@ alias wwssh2="ssh -i ~/.ssh/ww_id_rsa_old"
 export NPM_GLOBAL="/home/asyarb/.npm-global/bin"
 export PNPM_HOME="/home/asyarb/.local/share/pnpm"
 export RBENV="/home/asyarb/.rbenv/bin"
+export PERSONAL_BIN="/home/asyarb/bin"
 GO="/usr/local/go/bin"
 
-export PATH="$NPM_GLOBAL:$GO:$RBENV:$PNPM_HOME:$PATH"
+export PATH="$NPM_GLOBAL:$GO:$RBENV:$PNPM_HOME:$PERSONAL_BIN:$PATH"
 
 # RBEnv polluting my config
 eval "$(rbenv init - zsh)"
