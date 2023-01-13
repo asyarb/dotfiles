@@ -50,6 +50,7 @@ keymap("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
 -- Git
 keymap("n", "<leader>ggc", ":Telescope git_commits<cr>", opts)
 keymap("n", "<leader>ggs", ":Telescope git_status<cr>", opts)
+keymap("n", "<leader>gsb", ":Gitsigns blame_line<cr>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)

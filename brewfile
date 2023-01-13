@@ -8,15 +8,12 @@ tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'homebrew/cask-fonts'
 
-tap 'jesseduffield/lazygit/lazygit'
-
 ##################
 # Casks
 ##################
 
 cask 'docker'
 cask 'google-chrome'
-cask 'iterm2'
 cask 'keepassx'
 cask 'sketch'
 cask 'visual-studio-code'
@@ -35,17 +32,14 @@ cask 'tableplus'
     brew 'reattach-to-user-namespace'
     brew 'tmux'
     brew 'trash'
-    brew 'watchman'
     brew 'zsh'
     brew 'neovim'
     brew 'exa'
     brew 'ripgrep'
-    brew 'batcat'
 
 # Git
     brew 'git'
     brew 'gh'
-    brew 'lazygit'
 
 # JavaScript
     brew 'n'

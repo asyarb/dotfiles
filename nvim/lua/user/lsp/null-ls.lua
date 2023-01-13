@@ -5,7 +5,7 @@ local utils = require("user.utils")
 local formatting = null_ls.builtins.formatting
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-local diagnostics = null_ls.builtins.diagnostics
+--[[ local diagnostics = null_ls.builtins.diagnostics ]]
 
 null_ls.setup({
 	debug = false,
@@ -17,17 +17,10 @@ null_ls.setup({
 			end,
 		}),
 		formatting.stylua,
-		formatting.sqlfluff.with({
-			extra_args = { "--dialect", "postgres" },
-		}),
-		null_ls.builtins.formatting.deno_fmt.with({
+		formatting.deno_fmt.with({
 			condition = function(null_ls_utils)
 				return null_ls_utils.root_has_file("deno.json")
 			end,
-		}),
-
-		diagnostics.sqlfluff.with({
-			extra_args = { "--dialect", "postgres" },
 		}),
 	},
 
