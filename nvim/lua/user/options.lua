@@ -4,6 +4,7 @@ vim.filetype.add({
 	extension = {
 		astro = "astro",
 		css = "scss",
+		svg = "html",
 	},
 })
 
@@ -52,6 +53,7 @@ o.foldexpr = "nvim_treesitter#foldexpr()"
 o.foldlevel = 99
 o.guifont = "monospace:h17" -- the font used in graphical neovim applications
 o.fillchars.eob = " "
+o.wrap = false -- Show lines as one long line.
 
 o.shortmess:append("c")
 o.whichwrap:append("<,>,[,],h,l")
