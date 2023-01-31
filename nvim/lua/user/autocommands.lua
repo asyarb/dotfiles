@@ -52,3 +52,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
         ]])
 	end,
 })
+
+-- Easy Align
+vim.cmd("xmap ga <Plug>(EasyAlign)")
+vim.cmd("nmap ga <Plug>(EasyAlign)")
