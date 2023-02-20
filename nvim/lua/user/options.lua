@@ -7,7 +7,6 @@ vim.filetype.add({
 		svg = "html",
 	},
 })
-
 o.backup = false -- creates a backup file
 o.swapfile = false -- creates a swapfile
 o.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
