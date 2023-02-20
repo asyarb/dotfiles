@@ -13,7 +13,6 @@ plugins=(
     git
     zsh-syntax-highlighting
     zsh-autosuggestions
-    zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -24,10 +23,8 @@ alias cd..="cd .."
 alias wget="wget -c"
 
 # Modern CLI tool equivalents
-alias sl="exa"
+alias sl="exa --icons"
 alias ls="exa"
-alias bat="batcat"
-alias fd="fdfind"
 
 # ZSH stuff
 alias zshconfig="mate ~/.zshrc"
@@ -43,12 +40,6 @@ export NPM_GLOBAL=$HOME/.npm-packages/bin
 
 # Export Path
 export PATH=$GO_HOME:$NPM_GLOBAL:$PATH
-
-# # FZF
-# source /usr/share/doc/fzf/examples/key-bindings.zsh
-# source /usr/share/doc/fzf/examples/completion.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -47,9 +47,9 @@ o.sidescrolloff = 8
 o.hidden = true -- allow for buffers to be open in the background
 o.lazyredraw = true
 o.background = "dark"
+o.foldlevel = 20
 o.foldmethod = "expr" -- use language server based folding
 o.foldexpr = "nvim_treesitter#foldexpr()"
-o.foldlevel = 99
 o.guifont = "monospace:h17" -- the font used in graphical neovim applications
 o.fillchars.eob = " "
 

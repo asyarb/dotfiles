@@ -53,6 +53,7 @@ return packer.startup(function(use)
 	use("tpope/vim-repeat") -- Make . not suck
 	use("christoomey/vim-tmux-navigator") -- Allow seamless navigation between buffers and tmux
 	use("preservim/vim-markdown") -- Helpful markdown utils
+	use("junegunn/vim-easy-align") -- Alignment utilities
 
 	-- Comments
 	use("numToStr/Comment.nvim") -- Comment engine
