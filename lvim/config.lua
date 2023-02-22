@@ -106,6 +106,11 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.nvimtree.setup.hijack_directories = true
 lvim.builtin.nvimtree.setup.view.mappings.list = {
 	{ key = "<CR>", action = "edit_in_place" },
+	{ key = "%", action = "create" },
+	{ key = "d", action = "create" },
+	{ key = "D", action = "remove" },
+	{ key = "p", action = "paste" },
+	{ key = "y", action = "copy" },
 }
 
 -- if you don't want all the parsers change this to a table of the ones you want
