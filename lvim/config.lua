@@ -22,6 +22,7 @@ vim.opt.colorcolumn = "99999"
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.textwidth = 80
 vim.opt.formatoptions = "cqj"
+vim.opt.updatetime = 300 -- faster completion
 
 -- filetypes
 vim.filetype.add({
@@ -103,7 +104,6 @@ lvim.builtin.treesitter.rainbow.colors = { "#E5C07B", "#C678DD", "#56B6C2" }
 
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.builtin.nvimtree.setup.hijack_directories = true
 lvim.builtin.nvimtree.setup.view.mappings.list = {
 	{ key = "<CR>", action = "edit_in_place" },
 	{ key = "%", action = "create" },
@@ -127,6 +127,7 @@ lvim.builtin.treesitter.ensure_installed = {
 	"rust",
 	"java",
 	"yaml",
+	"php",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -141,7 +142,7 @@ lvim.plugins = {
 
 	{
 		"catppuccin/nvim",
-		as = "catppuccin",
+		name = "catppuccin",
 		config = function()
 			require("catppuccin").setup({
 				integrations = {
@@ -210,9 +211,6 @@ formatters.setup({
 	{
 		command = "prettierd",
 		env = { PRETTIERD_LOCAL_PRETTIER_ONLY = 1 },
-		condition = function(null_ls_utils)
-			return null_ls_utils.root_has_file({ "package.json" })
-		end,
 	},
 	{
 		command = "stylua",
@@ -225,6 +223,9 @@ linters.setup({
 	{
 		command = "eslint_d",
 		env = { ESLINT_D_LOCAL_ESLINT_ONLY = 1 },
+		condition = function(null_ls_utils)
+			return null_ls_utils.root_has_file({ "package.json", ".eslintrc", ".eslintrc.json", ".eslintrc.js" })
+		end,
 	},
 })
 
@@ -234,10 +235,12 @@ linters.setup({
 --   -- enable wrap mode for json files only
 --   command = "setlocal wrap",
 -- })
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
+
+-- let treesitter use bash highlight for zsh files as well
+vim.api.nvim_create_autocmd("FileType", {
+
+	pattern = "zsh",
+	callback = function()
+		require("nvim-treesitter.highlight").attach(0, "bash")
+	end,
+})
