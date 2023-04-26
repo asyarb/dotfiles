@@ -90,7 +90,6 @@ lvim.builtin.telescope.defaults.mappings = {
 -- }
 
 -- User Config for predefined plugins. After changing plugin config exit and
--- reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 
@@ -101,18 +100,6 @@ lvim.builtin.bufferline.active = false
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.treesitter.rainbow.extended_mode = false
 lvim.builtin.treesitter.rainbow.colors = { "#E5C07B", "#C678DD", "#56B6C2" }
-
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.builtin.nvimtree.setup.view.mappings.list = {
-	{ key = "<CR>", action = "edit_in_place" },
-	{ key = "%", action = "create" },
-	{ key = "d", action = "create" },
-	{ key = "D", action = "remove" },
-	{ key = "p", action = "paste" },
-	{ key = "y", action = "copy" },
-}
-
--- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
 	"bash",
 	"c",
@@ -128,9 +115,19 @@ lvim.builtin.treesitter.ensure_installed = {
 	"yaml",
 	"php",
 }
-
-lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.ignore_install = {}
 lvim.builtin.treesitter.highlight.enable = true
+
+lvim.builtin.nvimtree.setup.filters.custom = {}
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.nvimtree.setup.view.mappings.list = {
+	{ key = "<CR>", action = "edit_in_place" },
+	{ key = "%", action = "create" },
+	{ key = "d", action = "create" },
+	{ key = "D", action = "remove" },
+	{ key = "p", action = "paste" },
+	{ key = "y", action = "copy" },
+}
 
 -- Additional Plugins
 lvim.plugins = {
@@ -138,6 +135,7 @@ lvim.plugins = {
 	{ "tpope/vim-surround" },
 	{ "tpope/vim-abolish" },
 	{ "christoomey/vim-tmux-navigator" },
+	{ "jwalton512/vim-blade" },
 
 	{
 		"catppuccin/nvim",
@@ -208,36 +206,31 @@ lvim.plugins = {
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{
-		command = "prettierd",
+		name = "prettierd",
 		env = { PRETTIERD_LOCAL_PRETTIER_ONLY = 1 },
+		condition = function(null_ls_utils)
+			return null_ls_utils.root_has_file({ "package.json" })
+		end,
 	},
-	{
-		command = "stylua",
-	},
+	{ name = "stylua" },
+	{ name = "pint" },
 })
 
 -- linters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
 	{
-		command = "eslint_d",
-		env = { ESLINT_D_LOCAL_ESLINT_ONLY = 1 },
+		name = "eslint",
 		condition = function(null_ls_utils)
-			return null_ls_utils.root_has_file({ "package.json", ".eslintrc", ".eslintrc.json", ".eslintrc.js" })
+			return null_ls_utils.root_has_file({ "package.json" })
 		end,
 	},
 })
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = { "*.json", "*.jsonc" },
---   -- enable wrap mode for json files only
---   command = "setlocal wrap",
--- })
-
--- let treesitter use bash highlight for zsh files as well
+--
+-- Let treesitter use bash highlight for zsh files as well
 vim.api.nvim_create_autocmd("FileType", {
-
 	pattern = "zsh",
 	callback = function()
 		require("nvim-treesitter.highlight").attach(0, "bash")
