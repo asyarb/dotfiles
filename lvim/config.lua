@@ -75,21 +75,7 @@ lvim.builtin.telescope.defaults.mappings = {
 	},
 }
 
--- Change theme settings
-
--- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
--- }
-
--- User Config for predefined plugins. After changing plugin config exit and
+-- user config for predefined plugins.
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 
@@ -136,6 +122,7 @@ lvim.plugins = {
 	{ "tpope/vim-abolish" },
 	{ "christoomey/vim-tmux-navigator" },
 	{ "jwalton512/vim-blade" },
+	{ "amadeus/vim-mjml" },
 
 	{
 		"catppuccin/nvim",
@@ -184,6 +171,23 @@ lvim.plugins = {
 			require("nvim-ts-autotag").setup()
 		end,
 	},
+	{
+		"romgrk/nvim-treesitter-context",
+		config = function()
+			require("treesitter-context").setup({
+				enable = true,
+				throttle = true,
+				max_lines = 0,
+				patterns = {
+					default = {
+						"class",
+						"function",
+						"method",
+					},
+				},
+			})
+		end,
+	},
 
 	{
 		"folke/todo-comments.nvim",
@@ -214,6 +218,7 @@ formatters.setup({
 	},
 	{ name = "stylua" },
 	{ name = "pint" },
+	{ name = "blade_formatter" },
 })
 
 -- linters
