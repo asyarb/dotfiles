@@ -12,7 +12,6 @@ tap 'homebrew/cask-fonts'
 # Casks
 ##################
 
-cask 'docker'
 cask 'google-chrome'
 cask 'keepassx'
 cask 'sketch'
@@ -43,13 +42,9 @@ cask 'tableplus'
 
 # JavaScript
     brew 'n'
-    brew 'deno'
 
 # Lua
     brew 'stylua'
-
-# Go
-    brew 'go'
 
 # Database
     brew 'sqlite'
