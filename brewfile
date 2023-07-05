@@ -6,7 +6,7 @@ tap 'homebrew/cask'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'homebrew/services'
-tap 'homebrew/cask-fonts'
+tap 'jesseduffield/lazygit/lazygit'
 
 ##################
 # Casks
@@ -16,7 +16,6 @@ cask 'google-chrome'
 cask 'keepassx'
 cask 'sketch'
 cask 'visual-studio-code'
-cask 'font-fira-code'
 cask 'spotify'
 cask 'discord'
 cask 'rectangle'
@@ -39,9 +38,13 @@ cask 'tableplus'
 # Git
     brew 'git'
     brew 'gh'
+    brew 'lazygit'
 
 # JavaScript
     brew 'n'
+
+# PHP
+    brew 'php'
 
 # Lua
     brew 'stylua'
