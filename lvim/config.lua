@@ -270,9 +270,9 @@ formatters.setup({
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
 	{
-		name = "eslint",
+		name = "eslint_d",
 		condition = function(null_ls_utils)
-			return null_ls_utils.root_has_file({ "package.json" })
+			return null_ls_utils.root_has_file({ ".eslintrc", ".eslintrc.js" })
 		end,
 	},
 })

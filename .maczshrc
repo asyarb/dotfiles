@@ -35,7 +35,7 @@ alias wwssh="ssh -i ~/.ssh/ww_id_rsa"
 alias wwssh2="ssh -i ~/.ssh/ww_id_rsa_old"
 
 # Path additions
-export NPM_GLOBAL=$HOME/.npm-packages/bin
+export NPM_GLOBAL=$HOME/.npm-global/bin
 export LOCAL_BIN=$HOME/.local/bin
 
 # Export Path
