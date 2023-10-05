@@ -191,7 +191,7 @@ lvim.plugins = {
 		end,
 	},
 
-	-- Editor Additions
+	-- Comment highlights for todo, fixme, etc.
 	{
 		"folke/todo-comments.nvim",
 		event = "BufRead",
@@ -199,6 +199,7 @@ lvim.plugins = {
 			require("todo-comments").setup()
 		end,
 	},
+	-- Non-shitty file explorer
 	{
 		"stevearc/oil.nvim",
 		opts = {
@@ -209,6 +210,10 @@ lvim.plugins = {
 				is_always_hidden = function(name)
 					return vim.tbl_contains({ ".git" }, name)
 				end,
+			},
+			keymaps = {
+				["<C-h>"] = false,
+				["<C-l>"] = false,
 			},
 		},
 		dependencies = { "nvim-tree/nvim-web-devicons" },
