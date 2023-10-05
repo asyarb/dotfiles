@@ -38,13 +38,17 @@ lvim.colorscheme = "catppuccin"
 
 -- Keymaps
 lvim.leader = "space"
-lvim.keys.visual_mode = {
-	-- Pasting over a selection will not overrwrite your paste register.
-	["p"] = '"_dP',
-}
-lvim.keys.normal_mode = {
-	-- File explorer will open the parent directory of current file.
-	["-"] = "<CMD>Oil<CR>",
+
+-- Pasting over a selection will not overrwrite your paste register.
+lvim.keys.visual_mode["p"] = '"_dP'
+
+-- File explorer will open the parent directory of current file.
+lvim.keys.normal_mode["-"] = "<cmd>Oil<CR>"
+
+-- Open git diff.
+lvim.builtin.which_key.mappings["gd"] = {
+	"<cmd>DiffviewOpen<CR>",
+	"Git diffview",
 }
 
 -- Change Telescope navigation to use j and k for navigation and n and p for
@@ -80,14 +84,6 @@ lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.treesitter.rainbow.extended_mode = false
 
 -- Lualine Configuration
-vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
-local git_blame = require("gitblame")
-
-lvim.builtin.lualine.sections = {
-	lualine_c = {
-		{ git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
-	},
-}
 lvim.builtin.lualine.options.theme = "catppuccin"
 
 -- My Plugins
@@ -104,22 +100,6 @@ lvim.plugins = {
 	{
 		"sindrets/diffview.nvim",
 		event = "BufRead",
-	},
-	{
-		"f-person/git-blame.nvim",
-		event = "BufRead",
-		config = function()
-			require("gitblame").setup({ enabled = false })
-		end,
-	},
-	{
-		"NeogitOrg/neogit",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-			"sindrets/diffview.nvim",
-		},
-		config = true,
 	},
 
 	-- Color Schemes
