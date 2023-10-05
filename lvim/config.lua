@@ -1,5 +1,3 @@
--- vim settings
-
 -- Disable creating backup files.
 vim.opt.backup = false
 
