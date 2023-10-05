@@ -46,7 +46,7 @@ lvim.keys.normal_mode["-"] = "<cmd>Oil<CR>"
 -- Open git diff.
 lvim.builtin.which_key.mappings["gd"] = {
 	"<cmd>DiffviewOpen<CR>",
-	"Git diffview",
+	"Git Diffview",
 }
 -- Stage entire buffer
 lvim.builtin.which_key.mappings["gS"] = {
@@ -95,6 +95,9 @@ lvim.plugins = {
 	{ "tpope/vim-repeat" },
 	{ "tpope/vim-surround" },
 	{ "tpope/vim-abolish" },
+
+	-- Syntax Highlighting plugins
+	{ "jwalton512/vim-blade" },
 
 	-- Utilites
 	{ "christoomey/vim-tmux-navigator" },
@@ -234,6 +237,7 @@ formatters.setup({
 		end,
 	},
 	{ name = "stylua" },
+	{ name = "pint" },
 })
 
 -- Linters
