@@ -101,6 +101,25 @@ lvim.plugins = {
 		"sindrets/diffview.nvim",
 		event = "BufRead",
 	},
+	{
+		"tpope/vim-fugitive",
+		cmd = {
+			"G",
+			"Git",
+			"Gdiffsplit",
+			"Gread",
+			"Gwrite",
+			"Ggrep",
+			"GMove",
+			"GDelete",
+			"GBrowse",
+			"GRemove",
+			"GRename",
+			"Glgrep",
+			"Gedit",
+		},
+		ft = { "fugitive" },
+	},
 
 	-- Color Schemes
 	{
@@ -182,7 +201,16 @@ lvim.plugins = {
 	},
 	{
 		"stevearc/oil.nvim",
-		opts = {},
+		opts = {
+			delete_to_trash = true,
+			trash_command = "trash",
+			view_options = {
+				show_hidden = true,
+				is_always_hidden = function(name)
+					return vim.tbl_contains({ ".git" }, name)
+				end,
+			},
+		},
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 }
