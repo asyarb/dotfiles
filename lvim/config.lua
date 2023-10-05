@@ -48,6 +48,11 @@ lvim.builtin.which_key.mappings["gd"] = {
 	"<cmd>DiffviewOpen<CR>",
 	"Git diffview",
 }
+-- Stage entire buffer
+lvim.builtin.which_key.mappings["gS"] = {
+	"<cmd>Gitsigns stage_buffer<CR>",
+	"Stage Buffer",
+}
 
 -- Change Telescope navigation to use j and k for navigation and n and p for
 -- history in both input and normal mode. we use protected-mode (pcall) just in
