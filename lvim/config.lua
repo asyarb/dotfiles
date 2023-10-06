@@ -92,6 +92,21 @@ lvim.builtin.treesitter.rainbow.extended_mode = false
 -- Lualine Configuration
 lvim.builtin.lualine.options.theme = "catppuccin"
 
+-- Icons
+local present, webdevicons = pcall(require, "nvim-web-devicons")
+if not present then
+	return
+end
+
+webdevicons.set_icon({
+	astro = {
+		--  󱓟 
+		icon = "󱓞",
+		color = "#FF7E33",
+		name = "astro",
+	},
+})
+
 -- My Plugins
 lvim.plugins = {
 	-- Pope
@@ -252,6 +267,7 @@ linters.setup({
 			return null_ls_utils.root_has_file({ ".eslintrc", ".eslintrc.js", ".eslintrc.json" })
 		end,
 	},
+	{ name = "jsonlint" },
 })
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
