@@ -28,6 +28,9 @@ vim.opt.timeoutlen = 500
 -- Disable virtual text.
 vim.diagnostic.config({ virtual_text = false })
 
+-- Ensure vim uses fastest shell
+vim.opt.shell = "/bin/sh"
+
 -- Format on save.
 lvim.format_on_save.enabled = true
 
