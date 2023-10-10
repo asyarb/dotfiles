@@ -249,9 +249,13 @@ local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{
 		name = "prettierd",
-		env = { PRETTIERD_LOCAL_PRETTIER_ONLY = 1 },
 		condition = function(null_ls_utils)
-			return null_ls_utils.root_has_file({ "package.json" })
+			return null_ls_utils.root_has_file({
+				"package.json",
+				".prettierrc",
+				"prettier.config.js",
+				"prettier.config.json",
+			})
 		end,
 	},
 	{ name = "stylua" },
