@@ -260,6 +260,7 @@ formatters.setup({
 		end,
 	},
 	{ name = "gofmt" },
+	{ name = "rustfmt" },
 	{ name = "stylua" },
 	{ name = "pint" },
 	{ name = "blade_formatter" },
