@@ -210,7 +210,7 @@ lvim.plugins = {
 	{
 		"ray-x/lsp_signature.nvim",
 		event = "BufRead",
-		opts = { always_trigger = true },
+		opts = {},
 		config = function(_, opts)
 			require("lsp_signature").setup(opts)
 		end,
@@ -259,15 +259,17 @@ formatters.setup({
 			})
 		end,
 	},
+	{ name = "gofmt" },
 	{ name = "stylua" },
 	{ name = "pint" },
+	{ name = "blade_formatter" },
 })
 
 -- Linters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
 	{
-		name = "eslint_d",
+		name = "eslint",
 		condition = function(null_ls_utils)
 			return null_ls_utils.root_has_file({ ".eslintrc", ".eslintrc.js", ".eslintrc.json" })
 		end,
