@@ -38,13 +38,23 @@ alias wwssh2="ssh -i ~/.ssh/ww_id_rsa_old"
 export NPM_GLOBAL=$HOME/.npm-global/bin
 export BUN_GLOBAL=$HOME/.bun/bin
 export LOCAL_BIN=$HOME/.local/bin
-export PYENV_ROOT=$HOME/.pyenv/shims
 
 # Export Path
-export PATH=$NPM_GLOBAL:$BUN_GLOBAL:$LOCAL_BIN:$PYENV_ROOT:$PATH
+export PATH=$NPM_GLOBAL:$BUN_GLOBAL:$LOCAL_BIN:$PATH
+
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
+export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/Library/Python/3.9/site-packages/usr/lib/password-store/extensions/"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # bun completions
 [ -s "/Users/anthonyyarbrough/.bun/_bun" ] && source "/Users/anthonyyarbrough/.bun/_bun"
+
+# pnpm
+export PNPM_HOME="/Users/anthonyyarbrough/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
