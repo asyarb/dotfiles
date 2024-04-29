@@ -10,6 +10,7 @@ vim.g.have_nerd_font = true
 
 -- Make line numbers default
 vim.opt.number = true
+
 -- Relative line numbers
 vim.opt.relativenumber = true
 
@@ -67,6 +68,10 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- Softwrap lines
+vim.opt.wrap = true
+vim.opt.linebreak = true
 
 -- Sets the characters used in LSP diagnostics.
 local signs = { Error = '', Warn = '', Hint = '', Info = '' }
@@ -475,7 +480,15 @@ require('lazy').setup({
         },
         tailwindcss = {},
         cssls = {},
-        astro = {},
+        astro = {
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = {
+                dynamicRegistration = true,
+              },
+            },
+          },
+        },
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
