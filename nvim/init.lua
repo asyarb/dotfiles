@@ -112,12 +112,21 @@ local cmp_kinds = {
 -- Limit height of completion windows.
 vim.opt.pumheight = 12
 
+-- Remove virtual text
+vim.diagnostic.config { virtual_text = false }
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
+
+-- Pasting over a selection will not overrwrite your paste register.
+vim.keymap.set('v', 'p', '"_dP', { desc = 'Paste' })
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Retain `gx` behavior even though `netrw` is disabled.
+vim.keymap.set('n', 'gx', '<cmd>!open <cWORD><CR>', { silent = true })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
@@ -187,7 +196,8 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-surround',
   'christoomey/vim-tmux-navigator', -- Seamlessly move between tmux sessions and nvim.
-  'b0o/schemastore.nvim', --- commonly used JSON schemas like VSCode has.
+  'b0o/schemastore.nvim', -- Commonly used JSON schemas like VSCode has.
+  'jwalton512/vim-blade', -- Blade syntax highlights
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -479,13 +489,10 @@ require('lazy').setup({
           },
         },
         tailwindcss = {},
-        cssls = {},
-        astro = {
-          capabilities = {
-            workspace = {
-              didChangeWatchedFiles = {
-                dynamicRegistration = true,
-              },
+        cssls = {
+          settings = {
+            css = {
+              validate = false,
             },
           },
         },
@@ -562,8 +569,13 @@ require('lazy').setup({
         javascript = { { 'prettierd', 'prettier' } },
         typescript = { { 'prettierd', 'prettier' } },
         typescriptreact = { { 'prettierd', 'prettier' } },
+        markdown = { { 'prettierd', 'prettier' } },
         astro = { { 'prettierd', 'prettier' } },
         css = { { 'prettierd', 'prettier' } },
+        json = { { 'prettierd', 'prettier' } },
+        jsonc = { { 'prettierd', 'prettier' } },
+        php = { { 'pint' } },
+        blade = { { 'prettierd', 'prettier' } },
       },
     },
   },
@@ -732,6 +744,16 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
+  -- Status line: file info, line number, etc.
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    opts = {
+      icons_enabled = vim.g.have_nerd_font,
+      theme = 'tokyonight',
+    },
+  },
+
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
@@ -742,21 +764,6 @@ require('lazy').setup({
       --  - yinq - [Y]ank [I]nside [N]ext [']quote
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
-
-      -- Simple and easy statusline.
-      --  You could remove this setup call if you don't like it,
-      --  and try some other statusline plugin
-      local statusline = require 'mini.statusline'
-      -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
-
-      -- You can configure sections in the statusline by overriding their
-      -- default behavior. For example, here we set the section for
-      -- cursor location to LINE:COLUMN
-      ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_location = function()
-        return '%2l:%-2v'
-      end
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
@@ -796,6 +803,20 @@ require('lazy').setup({
     end,
   },
 
+  -- Show the signature of a function as you type.
+  {
+    'ray-x/lsp_signature.nvim',
+    event = 'VeryLazy',
+    opts = {
+      hint_enable = false,
+      padding = '',
+      handler_opts = {
+        border = 'none',
+      },
+    },
+  },
+
+  -- Automatically edit corresponding tags in html-like code.
   'windwp/nvim-ts-autotag',
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
@@ -809,7 +830,7 @@ require('lazy').setup({
   --
   -- require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
