@@ -199,8 +199,23 @@ require('lazy').setup({
   'b0o/schemastore.nvim', -- Commonly used JSON schemas like VSCode has.
   'jwalton512/vim-blade', -- Blade syntax highlights
 
+  {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    event = 'VimEnter',
+    opts = {
+      enable_autocmd = false,
+    },
+  },
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  {
+    'numToStr/Comment.nvim',
+    event = 'VimEnter',
+    config = function()
+      require('Comment').setup {
+        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+      }
+    end,
+  },
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -488,7 +503,18 @@ require('lazy').setup({
             },
           },
         },
-        tailwindcss = {},
+        tailwindcss = {
+          settings = {
+            tailwindCSS = {
+              experimental = {
+                classRegex = {
+                  { 'cva\\(([^)]*)\\)', '["\'`]([^"\'`]*).*?["\'`]' },
+                  { 'cx\\(([^)]*)\\)', "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+                },
+              },
+            },
+          },
+        },
         cssls = {
           settings = {
             css = {
@@ -751,6 +777,12 @@ require('lazy').setup({
     opts = {
       icons_enabled = vim.g.have_nerd_font,
       theme = 'tokyonight',
+      sections = {
+        lualine_c = { { 'filename', path = 1 } },
+      },
+      inactive_sections = {
+        lualine_c = { { 'filename', path = 1 } },
+      },
     },
   },
 
