@@ -198,6 +198,7 @@ require('lazy').setup({
   'christoomey/vim-tmux-navigator', -- Seamlessly move between tmux sessions and nvim.
   'b0o/schemastore.nvim', -- Commonly used JSON schemas like VSCode has.
   'jwalton512/vim-blade', -- Blade syntax highlights
+  'isobit/vim-caddyfile', -- Caddyfile
 
   {
     'JoosepAlviste/nvim-ts-context-commentstring',

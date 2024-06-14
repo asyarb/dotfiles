@@ -23,8 +23,8 @@ alias cd..="cd .."
 alias wget="wget -c"
 
 # Modern CLI tool equivalents
-alias sl="exa --icons"
-alias ls="exa"
+alias sl="eza --icons"
+alias ls="eza --icons"
 
 # ZSH stuff
 alias zshconfig="mate ~/.zshrc"

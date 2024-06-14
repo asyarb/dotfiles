@@ -32,7 +32,7 @@ cask 'font-fira-code-nerd-font'
     brew 'trash'
     brew 'zsh'
     brew 'neovim'
-    brew 'exa'
+    brew 'eza'
     brew 'ripgrep'
 
 # Git
