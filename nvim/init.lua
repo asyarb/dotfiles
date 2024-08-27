@@ -73,6 +73,13 @@ vim.opt.scrolloff = 10
 vim.opt.wrap = true
 vim.opt.linebreak = true
 
+-- Folding configuration
+vim.opt.foldcolumn = '0'
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+vim.opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+
 -- Sets the characters used in LSP diagnostics.
 local signs = { Error = '', Warn = '', Hint = '', Info = '' }
 for type, icon in pairs(signs) do
@@ -190,6 +197,19 @@ require('lazy').setup({
   'b0o/schemastore.nvim', -- Commonly used JSON schemas like VSCode has.
   'jwalton512/vim-blade', -- Blade syntax highlights
   'isobit/vim-caddyfile', -- Caddyfile
+
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = 'kevinhwang91/promise-async',
+    config = function()
+      require('ufo').setup {
+        open_fold_hl_timeout = 0,
+        provider_selector = function(bufnr, filetype, buftype)
+          return { 'treesitter', 'indent' }
+        end,
+      }
+    end,
+  },
 
   {
     'JoosepAlviste/nvim-ts-context-commentstring',
@@ -713,7 +733,12 @@ require('lazy').setup({
   },
 
   -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  {
+    'folke/todo-comments.nvim',
+    event = 'VimEnter',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = { signs = false },
+  },
 
   -- Status line: file info, line number, etc.
   {
@@ -774,19 +799,10 @@ require('lazy').setup({
   -- Automatically edit corresponding tags in html-like code.
   'windwp/nvim-ts-autotag',
 
-  -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
-  -- init.lua. If you want these files, they are in the repository, so you can just download them and
-  -- place them in the correct locations.
-
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.gitsigns',
-
-  -- NOTE: The import below can automatically add your own plugins,
-  -- configuration, etc from `lua/custom/plugins/*.lua`
-
-  -- { import = 'custom.plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
