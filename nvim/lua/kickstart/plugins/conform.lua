@@ -28,7 +28,7 @@ return {
         typescript = { 'biome', 'prettierd', stop_after_first = true },
         typescriptreact = { 'biome', 'prettierd', stop_after_first = true },
         json = { 'biome', 'prettierd', stop_after_first = true },
-        jsonc = { 'prettierd' },
+        jsonc = { 'biome', 'prettierd', stop_after_first = true },
         markdown = { 'prettierd' },
         astro = { 'prettierd' },
         css = { 'prettierd' },
