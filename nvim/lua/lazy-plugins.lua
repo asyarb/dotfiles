@@ -25,7 +25,6 @@
 --  config = function() ... end
 
 require('lazy').setup({
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-surround', -- Work with surrounding delimiters easily
   'christoomey/vim-tmux-navigator', -- Seamlessly move between tmux sessions and nvim.
   'b0o/schemastore.nvim', -- Commonly used JSON schemas like VSCode has.
