@@ -1,6 +1,8 @@
 local function eslint_config_exists()
   local eslint_files = {
+    'eslint.config.js',
     '.eslintrc',
+    '.eslintrc.json',
     '.eslintrc.js',
   }
   local current_dir = vim.fn.getcwd()

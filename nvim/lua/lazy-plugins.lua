@@ -25,6 +25,7 @@
 --  config = function() ... end
 
 require('lazy').setup({
+  'tpope/vim-repeat', -- Work with repeating plugins
   'tpope/vim-surround', -- Work with surrounding delimiters easily
   'christoomey/vim-tmux-navigator', -- Seamlessly move between tmux sessions and nvim.
   'b0o/schemastore.nvim', -- Commonly used JSON schemas like VSCode has.

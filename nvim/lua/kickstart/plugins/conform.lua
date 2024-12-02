@@ -30,6 +30,7 @@ return {
         json = { 'biome', 'prettierd', stop_after_first = true },
         jsonc = { 'biome', 'prettierd', stop_after_first = true },
         markdown = { 'prettierd' },
+        html = { 'prettierd' },
         astro = { 'prettierd' },
         css = { 'prettierd' },
         php = { 'pint' },

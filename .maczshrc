@@ -34,23 +34,20 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 alias wwssh="ssh -i ~/.ssh/ww_id_rsa"
 alias wwssh2="ssh -i ~/.ssh/ww_id_rsa_old"
 
-# Path additions
-export NPM_GLOBAL=$HOME/.npm-global/bin
-export LOCAL_BIN=$HOME/.local/bin
+# Node stuff
+export N_PREFIX=$HOME/n
+export PATH=$HOME/n/bin:$PATH
+export PATH=$HOME/.npm-global/bin:$PATH
 
-export PATH=$NPM_GLOBAL:$LOCAL_BIN:$PATH
+# Other Path additions
+export PATH=$HOME/.local/bin:$PATH
 
+# Password store
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/Library/Python/3.9/site-packages/usr/lib/password-store/extensions/"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# bun completions
-[ -s "/Users/anthonyyarbrough/.bun/_bun" ] && source "/Users/anthonyyarbrough/.bun/_bun"
-
 # sst
 export PATH=/Users/anthonyyarbrough/.sst/bin:$PATH
-
-# mise
-export PATH="$HOME/.local/share/mise/shims:$PATH"
