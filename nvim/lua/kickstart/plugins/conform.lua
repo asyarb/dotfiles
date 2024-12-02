@@ -34,6 +34,7 @@ return {
         astro = { 'prettierd' },
         css = { 'prettierd' },
         php = { 'pint' },
+        go = { 'gofmt' },
       },
     },
   },
