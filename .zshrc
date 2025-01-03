@@ -23,7 +23,6 @@ zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light jeffreytse/zsh-vi-mode
 zinit light Aloxaf/fzf-tab
 
 # Add in snippets
@@ -39,6 +38,7 @@ zinit cdreplay -q
 # Aliases
 alias mkdir="mkdir -pv"
 alias cd..="cd .."
+alias ..="cd .."
 alias wget="wget -c"
 alias ls="eza --icons"
 alias sl="eza --icons"
