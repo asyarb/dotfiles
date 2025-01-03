@@ -31,6 +31,7 @@ return {
         jsonc = { 'biome', 'prettierd', stop_after_first = true },
         markdown = { 'prettierd' },
         html = { 'prettierd' },
+        svg = { 'prettierd' },
         astro = { 'prettierd' },
         css = { 'prettierd' },
         php = { 'pint' },
