@@ -18,9 +18,9 @@ cask 'visual-studio-code'
 cask 'spotify'
 cask 'discord'
 cask 'rectangle'
-cask 'kitty'
+cask 'ghostty'
 cask 'tableplus'
-cask 'font-fira-code-nerd-font'
+cask 'font-geist-mono-nerd-font'
 
 ##################
 # Brews
