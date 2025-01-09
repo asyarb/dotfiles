@@ -61,7 +61,10 @@ return {
     -- See `:help telescope.builtin`
     local builtin = require('telescope.builtin')
     local search_files = function()
-      builtin.find_files({ hidden = true })
+      builtin.find_files({
+        hidden = true,
+        find_command = { 'fd', '--type', 'f', '--hidden', '--exclude', '.git' },
+      })
     end
 
     vim.keymap.set('n', '<leader>sf', search_files, { desc = '[S]earch [F]iles' })
