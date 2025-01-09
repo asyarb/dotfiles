@@ -22,6 +22,14 @@ return {
           lsp_format = lsp_format_opt,
         }
       end,
+      formatters = {
+        prettierd_svg = {
+          command = 'prettierd',
+          args = function(self, ctx)
+            return { ctx.filename, '--parser=html' } -- Note: filename and parser format
+          end,
+        },
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
         javascript = { 'biome', 'prettierd', stop_after_first = true },
@@ -31,7 +39,7 @@ return {
         jsonc = { 'biome', 'prettierd', stop_after_first = true },
         markdown = { 'prettierd' },
         html = { 'prettierd' },
-        svg = { 'prettierd' },
+        svg = { 'prettierd_svg' },
         astro = { 'prettierd' },
         css = { 'prettierd' },
         php = { 'pint' },
