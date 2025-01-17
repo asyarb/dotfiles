@@ -78,3 +78,6 @@ export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/Library/Python/3.9/site-packages/usr
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# bun completions
+[ -s "/Users/anthonyyarbrough/.bun/_bun" ] && source "/Users/anthonyyarbrough/.bun/_bun"
