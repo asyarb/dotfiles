@@ -30,8 +30,10 @@ require('lazy').setup({
   'tpope/vim-abolish', -- Work with string casing easily
   'christoomey/vim-tmux-navigator', -- Seamlessly move between tmux sessions and nvim.
   'b0o/schemastore.nvim', -- Commonly used JSON schemas like VSCode has.
-  'jwalton512/vim-blade', -- Blade syntax highlights
-  'isobit/vim-caddyfile', -- Caddyfile syntax highlights
+
+  require('highlighters.plugins.blade'),
+  require('highlighters.plugins.caddy'),
+  require('highlighters.plugins.slim'),
 
   require('kickstart.plugins.gitsigns'),
   require('kickstart.plugins.which-key'),
@@ -52,6 +54,7 @@ require('lazy').setup({
   require('custom.plugins.oil'),
   require('custom.plugins.comments'),
   require('custom.plugins.lsp-signature'),
+  require('custom.plugins.dressing'),
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
