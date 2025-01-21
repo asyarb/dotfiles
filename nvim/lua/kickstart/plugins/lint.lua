@@ -1,6 +1,7 @@
 local function eslint_config_exists()
   local eslint_files = {
     'eslint.config.js',
+    'eslint.config.mjs',
     '.eslintrc',
     '.eslintrc.json',
     '.eslintrc.js',
