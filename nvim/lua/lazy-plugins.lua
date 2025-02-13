@@ -55,6 +55,7 @@ require('lazy').setup({
   require('custom.plugins.comments'),
   require('custom.plugins.lsp-signature'),
   require('custom.plugins.dressing'),
+  require('custom.plugins.trouble'),
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
