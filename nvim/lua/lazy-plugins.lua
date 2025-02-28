@@ -25,9 +25,6 @@
 --  config = function() ... end
 
 require('lazy').setup({
-  'tpope/vim-repeat', -- Work with repeating plugins
-  'tpope/vim-surround', -- Work with surrounding delimiters easily
-  'tpope/vim-abolish', -- Work with string casing easily
   'christoomey/vim-tmux-navigator', -- Seamlessly move between tmux sessions and nvim.
   'b0o/schemastore.nvim', -- Commonly used JSON schemas like VSCode has.
 
@@ -40,13 +37,14 @@ require('lazy').setup({
   require('kickstart.plugins.telescope'),
   require('kickstart.plugins.lspconfig'),
   require('kickstart.plugins.conform'),
-  require('kickstart.plugins.cmp'),
+  require('kickstart.plugins.mini'),
   require('kickstart.plugins.tokyonight'),
   require('kickstart.plugins.todo-comments'),
   require('kickstart.plugins.treesitter'),
   require('kickstart.plugins.lint'),
   require('kickstart.plugins.autopairs'),
 
+  require('custom.plugins.blink-cmp'),
   require('custom.plugins.autotag'),
   require('custom.plugins.rainbow'),
   require('custom.plugins.lualine'),
