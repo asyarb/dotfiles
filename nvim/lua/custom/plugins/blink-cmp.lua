@@ -11,7 +11,6 @@ return {
       preset = 'enter',
       ['<Tab>'] = { 'select_next', 'fallback_to_mappings' },
       ['<S-Tab>'] = { 'select_prev', 'fallback_to_mappings' },
-      ['<Esc>'] = { 'cancel', 'fallback' },
     },
     appearance = {
       use_nvim_cmp_as_default = false,
@@ -57,8 +56,7 @@ return {
           },
         },
       },
-
-      list = { selection = { preselect = true, auto_insert = true } },
+      list = { selection = { preselect = true, auto_insert = false } },
     },
 
     -- Default list of enabled providers defined so that you can extend it

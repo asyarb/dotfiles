@@ -44,6 +44,7 @@ require('lazy').setup({
   require('kickstart.plugins.lint'),
   require('kickstart.plugins.autopairs'),
 
+  require('custom.plugins.snacks'),
   require('custom.plugins.blink-cmp'),
   require('custom.plugins.autotag'),
   require('custom.plugins.rainbow'),
@@ -52,7 +53,6 @@ require('lazy').setup({
   require('custom.plugins.oil'),
   require('custom.plugins.comments'),
   require('custom.plugins.lsp-signature'),
-  require('custom.plugins.dressing'),
   require('custom.plugins.trouble'),
 }, {
   ui = {
