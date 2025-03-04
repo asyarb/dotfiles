@@ -9,8 +9,8 @@ return {
   opts = {
     keymap = {
       preset = 'enter',
-      ['<Tab>'] = { 'select_next', 'fallback_to_mappings' },
-      ['<S-Tab>'] = { 'select_prev', 'fallback_to_mappings' },
+      ['<Tab>'] = { 'select_next', 'fallback' },
+      ['<S-Tab>'] = { 'select_prev', 'fallback' },
     },
     appearance = {
       use_nvim_cmp_as_default = false,
