@@ -71,6 +71,7 @@ export PATH=$HOME/n/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/Users/anthonyyarbrough/.sst/bin:$PATH
+export PATH=/Users/anthonyyarbrough/.bun/bin:$PATH
 
 # Password store
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
