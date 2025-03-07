@@ -5,7 +5,7 @@ return {
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
     opts = {
-      notify_on_error = false,
+      notify_on_error = true,
       format_on_save = function(bufnr)
         return {
           timeout_ms = 500,
@@ -13,8 +13,15 @@ return {
         }
       end,
       formatters = {
+        biome = {
+          require_cwd = true,
+        },
+        prettierd = {
+          require_cwd = true,
+        },
         prettierd_svg = {
           command = 'prettierd',
+          require_cwd = true,
           args = function(self, ctx)
             return { ctx.filename, '--parser=html' } -- Note: filename and parser format
           end,

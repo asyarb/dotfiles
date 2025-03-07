@@ -62,7 +62,7 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lazydev', 'lsp', 'snippets', 'path', 'buffer' },
+      default = { 'lazydev', 'lsp', 'snippets', 'path' },
       providers = {
         lazydev = {
           name = 'LazyDev',
