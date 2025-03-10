@@ -19,6 +19,13 @@ return {
     completion = {
       menu = {
         draw = {
+          -- -- nvim-cmp style menu
+          -- columns = {
+          --   { 'label', 'label_description', gap = 1 },
+          --   { 'kind_icon', 'kind' },
+          -- },
+
+          -- icons
           components = {
             kind_icon = {
               ellipsis = false,
@@ -57,6 +64,12 @@ return {
         },
       },
       list = { selection = { preselect = true, auto_insert = false } },
+
+      -- Show documentation when selecting a completion item
+      documentation = { auto_show = true, treesitter_highlighting = true, auto_show_delay_ms = 0 },
+
+      -- Display a preview of the selected item on the current line
+      ghost_text = { enabled = true },
     },
 
     -- Default list of enabled providers defined so that you can extend it
