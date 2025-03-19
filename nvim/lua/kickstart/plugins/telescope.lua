@@ -67,8 +67,7 @@ return {
       })
     end
 
-    vim.keymap.set('n', '<leader>sf', search_files, { desc = '[S]earch [F]iles' })
-    vim.keymap.set('n', '<leader>f', search_files, { desc = '[S]earch [F]iles' })
+    vim.keymap.set('n', '<leader>f', search_files, { desc = 'Search [F]iles' })
     vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
     vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
     vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })

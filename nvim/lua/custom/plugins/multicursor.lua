@@ -11,30 +11,30 @@ return {
     -- Add or skip cursor above/below the main cursor.
     set({ 'n', 'x' }, '<up>', function()
       mc.lineAddCursor(-1)
-    end)
+    end, { desc = 'Add cursor up' })
     set({ 'n', 'x' }, '<down>', function()
       mc.lineAddCursor(1)
-    end)
+    end, { desc = 'Add cursor down' })
     set({ 'n', 'x' }, '<leader><up>', function()
       mc.lineSkipCursor(-1)
-    end)
+    end, { desc = 'Skip cursor up' })
     set({ 'n', 'x' }, '<leader><down>', function()
       mc.lineSkipCursor(1)
-    end)
+    end, { desc = 'Skip cursor down' })
 
     -- Add or skip adding a new cursor by matching word/selection
     set({ 'n', 'x' }, '<leader>n', function()
       mc.matchAddCursor(1)
-    end)
+    end, { desc = 'Add cursor by selection' })
     set({ 'n', 'x' }, '<leader>s', function()
       mc.matchSkipCursor(1)
-    end)
+    end, { desc = 'Skip next cursor selection' })
     set({ 'n', 'x' }, '<leader>N', function()
       mc.matchAddCursor(-1)
-    end)
+    end, { desc = 'Add cursor backwards by selection' })
     set({ 'n', 'x' }, '<leader>S', function()
       mc.matchSkipCursor(-1)
-    end)
+    end, { desc = 'Skip next backwards cursor selection' })
 
     -- Disable and enable cursors.
     set({ 'n', 'x' }, '<c-q>', mc.toggleCursor)
@@ -45,9 +45,6 @@ return {
       -- Select a different cursor as the main one.
       layerSet({ 'n', 'x' }, '<left>', mc.prevCursor)
       layerSet({ 'n', 'x' }, '<right>', mc.nextCursor)
-
-      -- Delete the main cursor.
-      layerSet({ 'n', 'x' }, '<leader>x', mc.deleteCursor)
 
       -- Enable and clear cursors using escape.
       layerSet('n', '<esc>', function()

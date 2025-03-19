@@ -15,11 +15,6 @@ return {
       desc = 'Buffer Diagnostics (Trouble)',
     },
     {
-      '<leader>xl',
-      '<cmd>LintProject<cr>',
-      desc = 'Lint Project',
-    },
-    {
       '<leader>cs',
       '<cmd>Trouble symbols toggle focus=false<cr>',
       desc = 'Symbols (Trouble)',
