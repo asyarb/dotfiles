@@ -86,14 +86,7 @@ esac
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Local postgres stuff
-alias pg="sudo -u postgres psql"
-alias pg-start="sudo service postgresql start"
-alias pg-stop="sudo service postgresql stop"
-alias pg-restart="sudo service postgresql restart"
-alias pg-status="sudo service postgresql status"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# To customize prompt, run `p11k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # bun completions
