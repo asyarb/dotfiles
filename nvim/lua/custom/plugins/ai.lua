@@ -49,7 +49,7 @@ return {
       },
 
       diff = {
-        provider = 'mini_diff', -- default|mini_diff
+        provider = 'default', -- default|mini_diff
       },
     },
 
