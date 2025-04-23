@@ -63,7 +63,18 @@ return {
     local search_files = function()
       builtin.find_files({
         hidden = true,
-        find_command = { 'fd', '--type', 'f', '--hidden', '--exclude', '.git' },
+        find_command = {
+          'fd',
+          '--type',
+          'f',
+          '--hidden',
+          '--exclude',
+          '.git',
+          '--exclude',
+          'cms-docs',
+          '--exclude',
+          '*.lock',
+        },
       })
     end
 

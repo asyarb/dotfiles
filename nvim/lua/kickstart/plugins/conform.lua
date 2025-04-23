@@ -34,7 +34,6 @@ return {
         typescriptreact = { 'prettierd', 'biome', stop_after_first = true },
         json = { 'prettierd', 'biome', stop_after_first = true },
         jsonc = { 'prettierd', 'biome', stop_after_first = true },
-        markdown = { 'prettierd' },
         html = { 'prettierd', 'biome', stop_after_first = true },
         svg = { 'prettierd_svg' },
         astro = { 'prettierd' },
