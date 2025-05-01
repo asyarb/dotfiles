@@ -47,9 +47,7 @@ alias wwssh2="ssh -i ~/.ssh/ww_id_rsa_old"
 alias dc='docker compose'
 alias open="explorer.exe"
 alias trash="rm -rf"
-alias termconf="nvim /mnt/c/Users/Anthony/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json"
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+alias termconf="nvim /mnt/c/Users/Anthony/AppData/Roaming/alacritty/alacritty.toml"
 
 # History
 HISTSIZE=5000
@@ -71,20 +69,8 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --icons $realpath'
 
 # Path stuff
-export PATH="$HOME/.npm-global/bin:$PATH"
-export PATH="/usr/local/go/bin:$PATH"
-export PATH="/home/asyarb/go/bin:$PATH"
-export PATH="/home/asyarb/.turso:$PATH"
-export PATH=/home/asyarb/.sst/bin:$PATH
-export PATH="/opt/nvim-linux64/bin:$PATH"
-export PNPM_HOME="/home/asyarb/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # To customize prompt, run `p11k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -92,3 +78,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # bun completions
 [ -s "/home/asyarb/.bun/_bun" ] && source "/home/asyarb/.bun/_bun"
 
+# n
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

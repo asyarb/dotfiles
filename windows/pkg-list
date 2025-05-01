@@ -1,0 +1,14 @@
+curl
+git
+build-essential
+gpg
+neovim
+tmux
+wget
+ripgrep
+fd-find
+fzf
+bat
+eza
+zsh
+unzip
