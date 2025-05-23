@@ -222,6 +222,15 @@ return {
             },
           },
         },
+        ts_ls = {
+          settings = {
+            typescript = {
+              experimental = {
+                useTsgo = true,
+              },
+            },
+          },
+        },
       }
 
       local lspconfig = require('lspconfig')
