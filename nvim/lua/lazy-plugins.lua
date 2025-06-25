@@ -41,7 +41,7 @@ require('lazy').setup({
   require('kickstart.plugins.tokyonight'),
   require('kickstart.plugins.todo-comments'),
   require('kickstart.plugins.treesitter'),
-  require('kickstart.plugins.lint'),
+  -- require('kickstart.plugins.lint'),
   require('kickstart.plugins.autopairs'),
 
   require('custom.plugins.snacks'),
@@ -56,8 +56,8 @@ require('lazy').setup({
   require('custom.plugins.trouble'),
   require('custom.plugins.multicursor'),
   require('custom.plugins.spectre'),
-  require('custom.plugins.ai'),
 }, {
+  lockfile = './lazy-lock.json',
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
