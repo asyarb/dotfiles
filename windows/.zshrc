@@ -86,3 +86,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 export TERM="alacritty"
+
+# opencode
+export PATH=/home/asyarb/.opencode/bin:$PATH
