@@ -29,6 +29,7 @@ return {
       },
       formatters_by_ft = {
         lua = { 'stylua' },
+        markdown = { 'prettierd' },
         javascript = { 'prettierd', 'biome', stop_after_first = true },
         typescript = { 'prettierd', 'biome', stop_after_first = true },
         typescriptreact = { 'prettierd', 'biome', stop_after_first = true },
