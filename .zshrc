@@ -70,8 +70,12 @@ export N_PREFIX=$HOME/n
 export PATH=$HOME/n/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
-export PATH=/Users/anthonyyarbrough/.sst/bin:$PATH
-export PATH=/Users/anthonyyarbrough/.bun/bin:$PATH
+export PATH=$HOME/.sst/bin:$PATH
+export PATH=$HOME/.bun/bin:$PATH
+
+# Go Path
+export GOPATH=$HOME/code/go
+export PATH=$GOPATH/bin:$PATH
 
 # Password store
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
