@@ -50,6 +50,7 @@ require('lazy').setup({
   require('custom.plugins.rainbow'),
   require('custom.plugins.lualine'),
   require('custom.plugins.folding'),
+  require('custom.plugins.tailwind-fold'),
   require('custom.plugins.oil'),
   require('custom.plugins.comments'),
   require('custom.plugins.lsp-signature'),
