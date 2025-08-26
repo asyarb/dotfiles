@@ -1,8 +1,9 @@
 return {
   'saghen/blink.cmp',
+  event = 'VimEnter',
   version = '1.*',
 
-  dependencies = { 'onsails/lspkind.nvim' },
+  dependencies = { 'onsails/lspkind.nvim', 'folke/lazydev.nvim' },
 
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
@@ -19,12 +20,6 @@ return {
     completion = {
       menu = {
         draw = {
-          -- -- nvim-cmp style menu
-          -- columns = {
-          --   { 'label', 'label_description', gap = 1 },
-          --   { 'kind_icon', 'kind' },
-          -- },
-
           -- icons
           components = {
             kind_icon = {
@@ -75,7 +70,7 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lazydev', 'lsp', 'snippets', 'path' },
+      default = { 'lsp', 'snippets', 'path', 'lazydev' },
       providers = {
         lazydev = {
           name = 'LazyDev',
@@ -91,5 +86,8 @@ return {
     --
     -- See the fuzzy documentation for more information
     fuzzy = { implementation = 'prefer_rust_with_warning' },
+
+    -- Shows a signature help window while you type arguments for a function
+    signature = { enabled = true },
   },
 }

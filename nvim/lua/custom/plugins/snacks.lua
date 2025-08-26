@@ -11,14 +11,5 @@ return {
     },
     dashboard = { enabled = true },
     input = { enabled = true },
-    image = {
-      enabled = true,
-      doc = {
-        inline = false,
-        float = true,
-        max_width = 20,
-        max_height = 10,
-      },
-    },
   },
 }

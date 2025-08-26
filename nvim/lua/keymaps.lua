@@ -11,10 +11,10 @@ vim.keymap.set('v', 'p', '"_dP', { desc = 'Paste' })
 vim.keymap.set('n', 'gx', '<cmd>!open <cWORD><CR>', { silent = true })
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', '<leader>lj', vim.diagnostic.goto_prev, { desc = 'LSP: Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>lk', vim.diagnostic.goto_next, { desc = 'LSP: Go to next [D]iagnostic message' })
+vim.keymap.set('n', '[d', vim.diagnostic.get_prev, { desc = 'Go to previous [D]iagnostic message' })
+vim.keymap.set('n', '<leader>lj', vim.diagnostic.get_prev, { desc = 'LSP: Go to previous [D]iagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.get_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '<leader>lk', vim.diagnostic.get_next, { desc = 'LSP: Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
