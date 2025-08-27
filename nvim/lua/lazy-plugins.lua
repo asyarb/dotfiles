@@ -26,7 +26,6 @@
 
 require('lazy').setup({
   'christoomey/vim-tmux-navigator', -- Seamlessly move between tmux sessions and nvim.
-  'b0o/schemastore.nvim', -- Commonly used JSON schemas like VSCode has.
 
   require('highlighters.plugins.blade'),
   require('highlighters.plugins.caddy'),

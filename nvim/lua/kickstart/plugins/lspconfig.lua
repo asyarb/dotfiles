@@ -8,21 +8,20 @@ return {
     opts = {
       library = {
         -- Load luvit types when the `vim.uv` word is found
-        { path = 'luvit-meta/library', words = { 'vim%.uv' } },
+        { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
       },
     },
   },
-  -- { 'Bilal2453/luvit-meta', lazy = true },
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-
       -- Automatically install LSPs and related tools to stdpath for Neovim
       -- Mason must be loaded before its dependents so we need to set it up here.
       -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
       { 'mason-org/mason.nvim', opts = {} },
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
+      'b0o/schemastore.nvim',
 
       -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = {} },
@@ -173,156 +172,150 @@ return {
         virtual_text = false,
       })
 
-      -- LSP servers and clients are able to communicate to each other what features they support.
-      --  By default, Neovim doesn't support everything that is in the LSP specification.
-      --  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
-      --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
+      -- Language servers can broadly be installed in the following ways:
+      --  1) via the mason package manager; or
+      --  2) via your system's package manager; or
+      --  3) via a release binary from a language server's repo that's accessible somewhere on your system.
 
-      -- Enable the following language servers
-      --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-      --
-      --  Add any additional override configuration in the following tables. Available keys are:
-      --  - cmd (table): Override the default command used to start the server
-      --  - filetypes (table): Override the default list of associated filetypes for the server
-      --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-      --  - settings (table): Override the default settings passed when initializing the server.
-      --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      -- The servers table comprises of the following sub-tables:
+      -- 1. mason
+      -- 2. others
+      -- Both these tables have an identical structure of language server names as keys and
+      -- a table of language server configuration as values.
+      ---@class LspServersConfig
+      ---@field mason table<string, vim.lsp.Config>
+      ---@field others table<string, vim.lsp.Config>
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
+        --  Add any additional override configuration in any of the following tables. Available keys are:
+        --  - cmd (table): Override the default command used to start the server
+        --  - filetypes (table): Override the default list of associated filetypes for the server
+        --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
+        --  - settings (table): Override the default settings passed when initializing the server.
+        --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
         --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
-        --    https://github.com/pmizio/typescript-tools.nvim
-        --
-        -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
-
-        jsonls = {
-          settings = {
-            json = {
-              schemas = require('schemastore').json.schemas(),
-              validate = { enable = true },
+        --  Feel free to add/remove any LSPs here that you want to install via Mason. They will automatically be installed and setup.
+        mason = {
+          jsonls = {
+            settings = {
+              json = {
+                schemas = require('schemastore').json.schemas(),
+                validate = { enable = true },
+              },
             },
           },
-        },
-        intelephense = {
-          settings = {
-            intelephense = {
-              stubs = {
-                'apache',
-                'bcmath',
-                'bz2',
-                'calendar',
-                'com_dotnet',
-                'Core',
-                'ctype',
-                'curl',
-                'date',
-                'dba',
-                'dom',
-                'enchant',
-                'exif',
-                'FFI',
-                'fileinfo',
-                'filter',
-                'fpm',
-                'ftp',
-                'gd',
-                'gettext',
-                'gmp',
-                'hash',
-                'iconv',
-                'imap',
-                'intl',
-                'json',
-                'ldap',
-                'libxml',
-                'mbstring',
-                'meta',
-                'mysqli',
-                'oci8',
-                'odbc',
-                'openssl',
-                'pcntl',
-                'pcre',
-                'PDO',
-                'pgsql',
-                'Phar',
-                'posix',
-                'pspell',
-                'random',
-                'readline',
-                'Reflection',
-                'session',
-                'shmop',
-                'SimpleXML',
-                'snmp',
-                'soap',
-                'sockets',
-                'sodium',
-                'SPL',
-                'sqlite3',
-                'standard',
-                'superglobals',
-                'sysvmsg',
-                'sysvsem',
-                'sysvshm',
-                'tidy',
-                'tokenizer',
-                'xml',
-                'xmlreader',
-                'xmlrpc',
-                'xmlwriter',
-                'xsl',
-                'Zend OPcache',
-                'zip',
-                'zlib',
-                'wordpress',
+          intelephense = {
+            settings = {
+              intelephense = {
+                stubs = {
+                  'apache',
+                  'bcmath',
+                  'bz2',
+                  'calendar',
+                  'com_dotnet',
+                  'Core',
+                  'ctype',
+                  'curl',
+                  'date',
+                  'dba',
+                  'dom',
+                  'enchant',
+                  'exif',
+                  'FFI',
+                  'fileinfo',
+                  'filter',
+                  'fpm',
+                  'ftp',
+                  'gd',
+                  'gettext',
+                  'gmp',
+                  'hash',
+                  'iconv',
+                  'imap',
+                  'intl',
+                  'json',
+                  'ldap',
+                  'libxml',
+                  'mbstring',
+                  'meta',
+                  'mysqli',
+                  'oci8',
+                  'odbc',
+                  'openssl',
+                  'pcntl',
+                  'pcre',
+                  'PDO',
+                  'pgsql',
+                  'Phar',
+                  'posix',
+                  'pspell',
+                  'random',
+                  'readline',
+                  'Reflection',
+                  'session',
+                  'shmop',
+                  'SimpleXML',
+                  'snmp',
+                  'soap',
+                  'sockets',
+                  'sodium',
+                  'SPL',
+                  'sqlite3',
+                  'standard',
+                  'superglobals',
+                  'sysvmsg',
+                  'sysvsem',
+                  'sysvshm',
+                  'tidy',
+                  'tokenizer',
+                  'xml',
+                  'xmlreader',
+                  'xmlrpc',
+                  'xmlwriter',
+                  'xsl',
+                  'Zend OPcache',
+                  'zip',
+                  'zlib',
+                  'wordpress',
+                },
+              },
+            },
+          },
+          biome = {
+            settings = {
+              biome = {
+                requireConfigFile = true,
+              },
+            },
+          },
+          tailwindcss = {
+            settings = {
+              tailwindCSS = {
+                classFunctions = { 'cva', 'cx', 'clsx' },
+              },
+            },
+          },
+          lua_ls = {
+            settings = {
+              Lua = {
+                completion = {
+                  callSnippet = 'Replace',
+                },
+              },
+            },
+          },
+          ts_ls = {
+            settings = {
+              typescript = {
+                experimental = {
+                  useTsgo = true,
+                },
               },
             },
           },
         },
-        biome = {
-          settings = {
-            biome = {
-              requireConfigFile = true,
-            },
-          },
-        },
-        tailwindcss = {
-          settings = {
-            tailwindCSS = {
-              classFunctions = { 'cva', 'cx', 'clsx' },
-            },
-          },
-        },
-        lua_ls = {
-          -- cmd = {...},
-          -- filetypes = { ...},
-          -- capabilities = {},
-          settings = {
-            Lua = {
-              completion = {
-                callSnippet = 'Replace',
-              },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
-            },
-          },
-        },
-        ts_ls = {
-          settings = {
-            typescript = {
-              experimental = {
-                useTsgo = true,
-              },
-            },
-          },
-        },
+        -- This table contains config for all language servers that are *not* installed via Mason.
+        -- Structure is identical to the mason table from above.
+        others = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -338,26 +331,29 @@ return {
       --
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
-      })
+      local ensure_installed = vim.tbl_keys(servers.mason or {})
+      vim.list_extend(ensure_installed, { 'stylua', 'eslint' })
       require('mason-tool-installer').setup({ ensure_installed = ensure_installed })
 
+      -- Either merge all additional server configs from the `servers.mason` and `servers.others` tables
+      -- to the default language server configs as provided by nvim-lspconfig or
+      -- define a custom server config that's unavailable on nvim-lspconfig.
+      for server, config in pairs(vim.tbl_extend('keep', servers.mason, servers.others)) do
+        if not vim.tbl_isempty(config) then
+          vim.lsp.config(server, config)
+        end
+      end
+
+      -- After configuring our language servers, we now enable them
       require('mason-lspconfig').setup({
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
-        automatic_installation = false,
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
-          end,
-        },
+        automatic_enable = true, -- automatically run vim.lsp.enable() for all servers that are installed via Mason
       })
+
+      -- Manually run vim.lsp.enable for all language servers that are *not* installed via Mason
+      if not vim.tbl_isempty(servers.others) then
+        vim.lsp.enable(vim.tbl_keys(servers.others))
+      end
     end,
   },
 }
