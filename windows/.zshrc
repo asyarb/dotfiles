@@ -89,3 +89,6 @@ export TERM="alacritty"
 
 # opencode
 export PATH=/home/asyarb/.opencode/bin:$PATH
+
+# default editor
+export EDITOR=nvim
