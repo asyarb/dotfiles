@@ -26,6 +26,7 @@
 
 require('lazy').setup({
   'christoomey/vim-tmux-navigator', -- Seamlessly move between tmux sessions and nvim.
+  'tpope/vim-surround',
 
   require('highlighters.plugins.blade'),
   require('highlighters.plugins.caddy'),
@@ -39,7 +40,7 @@ require('lazy').setup({
   require('kickstart.plugins.blink-cmp'),
   require('kickstart.plugins.tokyonight'),
   require('kickstart.plugins.todo-comments'),
-  require('kickstart.plugins.mini'),
+  -- require('kickstart.plugins.mini'),
   require('kickstart.plugins.treesitter'),
   require('kickstart.plugins.autopairs'),
   -- require('kickstart.plugins.lint'),
