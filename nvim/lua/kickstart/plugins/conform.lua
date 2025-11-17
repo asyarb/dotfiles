@@ -13,9 +13,6 @@ return {
         }
       end,
       formatters = {
-        biome = {
-          require_cwd = true,
-        },
         prettierd = {
           require_cwd = true,
         },
@@ -30,15 +27,15 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         markdown = { 'prettierd' },
-        javascript = { 'prettierd', 'biome', stop_after_first = true },
-        typescript = { 'prettierd', 'biome', stop_after_first = true },
-        typescriptreact = { 'prettierd', 'biome', stop_after_first = true },
-        json = { 'prettierd', 'biome', stop_after_first = true },
-        jsonc = { 'prettierd', 'biome', stop_after_first = true },
-        html = { 'prettierd', 'biome', stop_after_first = true },
+        javascript = { 'prettierd', stop_after_first = true },
+        typescript = { 'prettierd', stop_after_first = true },
+        typescriptreact = { 'prettierd', stop_after_first = true },
+        json = { 'prettierd', stop_after_first = true },
+        jsonc = { 'prettierd', stop_after_first = true },
+        html = { 'prettierd', stop_after_first = true },
         svg = { 'prettierd_svg' },
         astro = { 'prettierd' },
-        css = { 'prettierd', 'biome', stop_after_first = true },
+        css = { 'prettierd', stop_after_first = true },
         php = { 'pint' },
         go = { 'gofmt' },
       },
