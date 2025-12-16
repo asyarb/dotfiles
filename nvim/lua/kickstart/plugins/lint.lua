@@ -17,15 +17,9 @@ local function eslint_config_exists()
   return false
 end
 
-local function biome_config_exists()
-  return vim.fn.filereadable(vim.fn.glob(vim.fn.getcwd() .. '/biome.json')) == 1
-end
-
 local function get_linter()
   if eslint_config_exists() then
     return 'eslint_d'
-  elseif biome_config_exists() then
-    return 'biomejs'
   end
   return nil
 end

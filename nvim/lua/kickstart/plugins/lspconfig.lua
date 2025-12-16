@@ -253,13 +253,6 @@ return {
               },
             },
           },
-          biome = {
-            settings = {
-              biome = {
-                requireConfigFile = true,
-              },
-            },
-          },
           tailwindcss = {
             settings = {
               tailwindCSS = {

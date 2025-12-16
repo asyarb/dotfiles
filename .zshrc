@@ -77,6 +77,9 @@ export PATH=$HOME/.bun/bin:$PATH
 export GOPATH=$HOME/code/go
 export PATH=$GOPATH/bin:$PATH
 
+# DBNgin
+export PATH=/Users/Shared/DBngin/mysql/8.2/bin:$PATH
+
 # Password store
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/Library/Python/3.9/site-packages/usr/lib/password-store/extensions/"
