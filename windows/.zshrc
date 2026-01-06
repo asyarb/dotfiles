@@ -72,6 +72,9 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --icons $real
 export PATH="$PATH:/opt/nvim/bin"
 export PATH="$PATH:$HOME/.local/bin"
 
+# PHP + Composer
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+
 # To customize prompt, run `p11k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
