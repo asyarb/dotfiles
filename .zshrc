@@ -45,6 +45,7 @@ alias sl="eza --icons"
 alias wwssh="ssh -i ~/.ssh/ww_id_rsa"
 alias wwssh2="ssh -i ~/.ssh/ww_id_rsa_old"
 alias dc='docker compose'
+alias opencode="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 opencode"
 
 # History
 HISTSIZE=5000
