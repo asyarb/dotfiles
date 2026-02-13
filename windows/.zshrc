@@ -48,6 +48,8 @@ alias dc='docker compose'
 alias open="explorer.exe"
 alias trash="rm -rf"
 alias termconf="nvim /mnt/c/Users/Anthony/AppData/Roaming/alacritty/alacritty.toml"
+alias opencode="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 opencode"
+alias lg="lazygit"
 
 # History
 HISTSIZE=5000
