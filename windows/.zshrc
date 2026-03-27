@@ -67,14 +67,14 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --icons $realpath'
 
 # Path stuff
-export PATH="$PATH:/opt/nvim/bin"
 export PATH="$PATH:$HOME/.local/bin"
 
 # To customize prompt, run `p11k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# default editor
+# Neovim
 export EDITOR=nvim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
