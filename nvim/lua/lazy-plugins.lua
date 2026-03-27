@@ -40,10 +40,8 @@ require('lazy').setup({
   require('kickstart.plugins.blink-cmp'),
   require('kickstart.plugins.tokyonight'),
   require('kickstart.plugins.todo-comments'),
-  -- require('kickstart.plugins.mini'),
   require('kickstart.plugins.treesitter'),
   require('kickstart.plugins.autopairs'),
-  -- require('kickstart.plugins.lint'),
 
   require('custom.plugins.snacks'),
   require('custom.plugins.autotag'),
