@@ -76,6 +76,9 @@ export PATH="$PATH:$HOME/.local/bin"
 export EDITOR=nvim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
+# Mise
+eval "$(mise activate zsh)"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Other packages that should be installed
@@ -89,3 +92,4 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # fzf
 # eza
 # zsh
+# unzip
