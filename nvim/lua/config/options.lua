@@ -6,3 +6,5 @@
 vim.opt.tabstop = 3
 vim.opt.shiftwidth = 3
 vim.opt.softtabstop = 3
+
+vim.g.snacks_animate = false
