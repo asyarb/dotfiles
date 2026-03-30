@@ -16,7 +16,7 @@ fi
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
-zinit ice depth=1; 
+zinit ice depth=1;
 
 # Add in zsh plugins
 zinit light romkatv/powerlevel10k
@@ -42,12 +42,10 @@ alias ..="cd .."
 alias wget="wget -c"
 alias ls="eza --icons"
 alias sl="eza --icons"
-alias wwssh="ssh -i ~/.ssh/ww_id_rsa"
-alias wwssh2="ssh -i ~/.ssh/ww_id_rsa_old"
 alias dc='docker compose'
 alias open="explorer.exe"
 alias trash="rm -rf"
-alias termconf="nvim /mnt/c/Users/Anthony/AppData/Roaming/alacritty/alacritty.toml"
+alias lg="lazygit"
 
 # History
 HISTSIZE=5000
@@ -69,29 +67,29 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --icons $realpath'
 
 # Path stuff
-export PATH="$PATH:/opt/nvim/bin"
 export PATH="$PATH:$HOME/.local/bin"
-
-# PHP + Composer
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
 # To customize prompt, run `p11k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# bun completions
-[ -s "/home/asyarb/.bun/_bun" ] && source "/home/asyarb/.bun/_bun"
-
-# n
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-export TERM="alacritty"
-
-# opencode
-export PATH=/home/asyarb/.opencode/bin:$PATH
-
-# default editor
+# Neovim
 export EDITOR=nvim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+# Mise
+eval "$(mise activate zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Other packages that should be installed
+# build-essential
+# curl
+# neovim
+# tmux
+# wget
+# ripgrep
+# fd-find
+# fzf
+# eza
+# zsh
+# unzip
