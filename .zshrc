@@ -74,9 +74,8 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.sst/bin:$PATH
 export PATH=$HOME/.bun/bin:$PATH
 
-# Go Path
-export GOPATH=$HOME/code/go
-export PATH=$GOPATH/bin:$PATH
+# Neovim
+export PATH=$HOME/nvim/bin:$PATH
 
 # DBNgin
 export PATH=/Users/Shared/DBngin/mysql/8.2/bin:$PATH
