@@ -13,6 +13,10 @@ return {
 					enabled = false,
 				},
 			},
+
+			sources = {
+				default = { "lsp", "path", "snippets" },
+			},
 		},
 	},
 }
