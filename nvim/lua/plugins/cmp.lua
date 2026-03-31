@@ -14,6 +14,8 @@ return {
 				},
 			},
 
+			list = { selection = { preselect = true, auto_insert = false } },
+
 			sources = {
 				default = { "lsp", "path", "snippets" },
 			},
