@@ -14,3 +14,6 @@ vim.g.snacks_animate = false
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
+
+-- Remove tab visualizations
+vim.opt.list = false
