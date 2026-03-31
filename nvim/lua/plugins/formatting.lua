@@ -15,6 +15,10 @@ return {
 				},
 			},
 
+			default_format_opts = {
+				lsp_format = "never", -- not recommended to change
+			},
+
 			formatters_by_fmt = {
 				lua = { "stylua" },
 				fish = { "fish_indent" },

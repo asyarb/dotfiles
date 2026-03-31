@@ -12,9 +12,8 @@ return {
 				ghost_text = {
 					enabled = false,
 				},
+				list = { selection = { preselect = true, auto_insert = false } },
 			},
-
-			list = { selection = { preselect = true, auto_insert = false } },
 
 			sources = {
 				default = { "lsp", "path", "snippets" },
