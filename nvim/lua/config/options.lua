@@ -13,3 +13,4 @@ vim.g.snacks_animate = false
 -- Softwrap lines
 vim.opt.wrap = true
 vim.opt.linebreak = true
+vim.opt.breakindent = true
