@@ -8,9 +8,6 @@ return {
 		},
 
 		completion = {
-			ghost_text = {
-				enabled = false,
-			},
 			list = { selection = { preselect = true, auto_insert = false } },
 		},
 
