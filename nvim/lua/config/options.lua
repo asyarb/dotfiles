@@ -7,4 +7,9 @@ vim.opt.tabstop = 3
 vim.opt.shiftwidth = 3
 vim.opt.softtabstop = 3
 
+-- Disable animations
 vim.g.snacks_animate = false
+
+-- Softwrap lines
+vim.opt.wrap = true
+vim.opt.linebreak = true
