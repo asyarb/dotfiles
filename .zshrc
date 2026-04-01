@@ -89,3 +89,5 @@ export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/Library/Python/3.9/site-packages/usr
 
 # bun completions
 [ -s "/Users/anthonyyarbrough/.bun/_bun" ] && source "/Users/anthonyyarbrough/.bun/_bun"
+
+eval "$(mise activate zsh)"
