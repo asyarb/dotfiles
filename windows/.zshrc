@@ -93,3 +93,6 @@ eval "$(mise activate zsh)"
 # eza
 # zsh
 # unzip
+
+# opencode
+export PATH=/home/antz/.opencode/bin:$PATH
