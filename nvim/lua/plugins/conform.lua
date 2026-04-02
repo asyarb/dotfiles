@@ -1,5 +1,5 @@
 ---@type conform.FiletypeFormatterInternal
-local prettier_compat = { "prettier", "oxfmt", stop_after_first = true }
+local js = { "prettier", "oxfmt", stop_after_first = true }
 
 return {
 	"stevearc/conform.nvim",
@@ -14,11 +14,12 @@ return {
 			php = { "pint" },
 			go = { "gofmt" },
 
-			css = prettier_compat,
-			typescriptreact = prettier_compat,
-			typescript = prettier_compat,
-			html = prettier_compat,
-			javascript = prettier_compat,
+			css = js,
+			typescriptreact = js,
+			typescript = js,
+			html = js,
+			javascript = js,
+			json = js,
 		},
 	},
 }
