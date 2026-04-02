@@ -18,8 +18,7 @@ vim.opt.breakindent = true
 -- Remove tab visualizations
 vim.opt.list = false
 
--- Use tsgo for TypeScript
+-- LazyVim
 vim.g.lazyvim_ts_lsp = "tsgo"
-
--- Ensure prettier has a config file
 vim.g.lazyvim_prettier_needs_config = true
+vim.g.lazyvim_mini_snippets_in_completion = false
