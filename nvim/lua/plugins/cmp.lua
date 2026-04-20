@@ -1,3 +1,5 @@
+local ghost_text = false
+
 return {
 	"saghen/blink.cmp",
 	opts = {
@@ -9,6 +11,11 @@ return {
 
 		completion = {
 			list = { selection = { preselect = true, auto_insert = false } },
+			ghost_text = { enabled = ghost_text },
+		},
+
+		cmdline = {
+			completion = { ghost_text = { enabled = ghost_text } },
 		},
 
 		sources = {
