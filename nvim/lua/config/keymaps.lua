@@ -9,3 +9,9 @@ vim.keymap.set("x", "S", [[:<C-u>lua MiniSurround.add('visual')<CR>]], { silent 
 
 -- Make special mapping for "add surrounding for line"
 vim.keymap.set("n", "yss", "ys_", { remap = true })
+
+-- Tmux Navigator
+vim.keymap.set("n", "<C-h>", "<Cmd>TmuxNavigateLeft<CR>", {})
+vim.keymap.set("n", "<C-j>", "<Cmd>TmuxNavigateDown<CR>", {})
+vim.keymap.set("n", "<C-k>", "<Cmd>TmuxNavigateUp<CR>", {})
+vim.keymap.set("n", "<C-l>", "<Cmd>TmuxNavigateRight<CR>", {})
