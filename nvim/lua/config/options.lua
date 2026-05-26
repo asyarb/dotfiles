@@ -19,7 +19,7 @@ vim.opt.breakindent = true
 vim.opt.list = false
 
 -- LazyVim
-vim.g.lazyvim_ts_lsp = "tsgo"
+-- vim.g.lazyvim_ts_lsp = "tsgo"
 vim.g.lazyvim_prettier_needs_config = true
 vim.g.lazyvim_mini_snippets_in_completion = false
 vim.opt_local.spell = false
