@@ -47,6 +47,12 @@ alias open="explorer.exe"
 alias trash="rm -rf"
 alias lg="lazygit"
 
+# MySQL service helpers for WSL2
+mysql:start() { sudo service mysql start; }
+mysql:stop() { sudo service mysql stop; }
+mysql:restart() { sudo service mysql restart; }
+mysql:status() { sudo service mysql status; }
+
 # History
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
