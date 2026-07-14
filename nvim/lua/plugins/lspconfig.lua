@@ -3,6 +3,17 @@ return {
 	opts = function(_, opts)
 		opts.diagnostics.virtual_text = false
 		opts.servers.phpactor = false
+		opts.servers.tailwindcss = {
+			settings = {
+				tailwindCSS = {
+					experimental = {
+						classRegex = {
+							{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+						},
+					},
+				},
+			},
+		}
 		opts.servers.intelephense = {
 			settings = {
 				intelephense = {
