@@ -20,6 +20,7 @@ return {
 			html = js,
 			javascript = js,
 			json = js,
+			markdown = js,
 		},
 	},
 }
