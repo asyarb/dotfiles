@@ -6,11 +6,7 @@ return {
 		opts.servers.tailwindcss = {
 			settings = {
 				tailwindCSS = {
-					experimental = {
-						classRegex = {
-							{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
-						},
-					},
+					classFunctions = { "cva", "cx", "clsx" },
 				},
 			},
 		}
