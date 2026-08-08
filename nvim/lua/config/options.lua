@@ -22,3 +22,13 @@ vim.opt.list = false
 vim.g.lazyvim_prettier_needs_config = true
 vim.g.lazyvim_mini_snippets_in_completion = false
 vim.opt_local.spell = false
+
+-- Enable WSL system clipboard
+if vim.fn.has("wsl") == 1 then
+	vim.g.clipboard = {
+		name = "win32yank-wsl",
+		copy = { ["+"] = "win32yank.exe -i --crlf", ["*"] = "win32yank.exe -i --crlf" },
+		paste = { ["+"] = "win32yank.exe -o --lf", ["*"] = "win32yank.exe -o --lf" },
+		cache_enabled = true,
+	}
+end
