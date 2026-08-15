@@ -9,4 +9,15 @@ return {
 			inlay_hints = { enabled = false },
 		},
 	},
+
+	-- Disable news alerts
+	{
+		"LazyVim/LazyVim",
+		opts = {
+			news = {
+				lazyvim = false,
+				neovim = false,
+			},
+		},
+	},
 }
