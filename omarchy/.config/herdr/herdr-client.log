@@ -1,0 +1,8 @@
+2026-08-14T22:33:24.612593Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=40490
+2026-08-14T22:33:24.612620Z  INFO herdr::client: connecting to server path=/home/asyarb/.config/herdr/herdr-client.sock
+2026-08-14T22:33:24.636770Z  INFO herdr::client: handshake succeeded version=20 encoding=SemanticFrame
+2026-08-14T22:34:07.439686Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=40490
+2026-08-15T09:10:19.025559Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=283960
+2026-08-15T09:10:19.025594Z  INFO herdr::client: connecting to server path=/home/asyarb/.config/herdr/herdr-client.sock
+2026-08-15T09:10:19.034934Z  INFO herdr::client: handshake succeeded version=20 encoding=SemanticFrame
+2026-08-15T09:11:19.054050Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=283960

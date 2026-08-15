@@ -1,0 +1,106 @@
+2026-08-14T22:33:24.563604Z  INFO herdr::api::server: api server listening path=/home/asyarb/.config/herdr/herdr.sock
+2026-08-14T22:33:24.564138Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-08-14T22:33:24.579460Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-14T22:33:24.580923Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-08-14T22:33:24.581786Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=40511
+2026-08-14T22:33:24.581914Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w1" pane_id=1
+2026-08-14T22:33:24.581921Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-08-14T22:33:24.582324Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-08-14T22:33:24.582331Z  INFO herdr::server::headless: created startup workspace cwd=/home/asyarb
+2026-08-14T22:33:24.582380Z  INFO herdr::server::headless: client protocol socket listening path=/home/asyarb/.config/herdr/herdr-client.sock
+2026-08-14T22:33:24.582398Z  INFO herdr::server::headless: herdr server started api_socket=/home/asyarb/.config/herdr/herdr.sock client_socket=/home/asyarb/.config/herdr/herdr-client.sock
+2026-08-14T22:33:24.582526Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=40491
+2026-08-14T22:33:24.626439Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-14T22:33:24.636880Z  INFO herdr::server::headless: client connected client_id=2 cols=266 rows=60 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-14T22:33:26.482821Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=1 status="ExitStatus { code: 0, signal: None }"
+2026-08-14T22:33:26.483174Z  INFO herdr::pane: pane session terminated pane=1 pid=40511 signal=Hangup
+2026-08-14T22:33:26.483285Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=2 rows=59 cols=240 scrollback_limit_bytes=10000000
+2026-08-14T22:33:26.484541Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=2 pid=40851
+2026-08-14T22:33:26.484654Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w2" pane_id=2
+2026-08-14T22:33:26.484663Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w2"
+2026-08-14T22:33:26.484673Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w2" tab_id="w2:t1"
+2026-08-14T22:33:28.039802Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=2 status="ExitStatus { code: 0, signal: None }"
+2026-08-14T22:33:28.042968Z  INFO herdr::pane: pane session terminated pane=2 pid=40851 signal=Hangup
+2026-08-14T22:33:28.043070Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=3 rows=59 cols=240 scrollback_limit_bytes=10000000
+2026-08-14T22:33:28.044150Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=3 pid=41110
+2026-08-14T22:33:28.044259Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w3" pane_id=3
+2026-08-14T22:33:28.044268Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w3"
+2026-08-14T22:33:28.044278Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t1"
+2026-08-14T22:33:31.520600Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=3 status="ExitStatus { code: 0, signal: None }"
+2026-08-14T22:33:31.520896Z  INFO herdr::pane: pane session terminated pane=3 pid=41110 signal=Hangup
+2026-08-14T22:33:31.520988Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=4 rows=59 cols=240 scrollback_limit_bytes=10000000
+2026-08-14T22:33:31.521989Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=4 pid=41382
+2026-08-14T22:33:31.522091Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w4" pane_id=4
+2026-08-14T22:33:31.522098Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w4"
+2026-08-14T22:33:31.522105Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w4" tab_id="w4:t1"
+2026-08-14T22:33:36.523862Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/asyarb/.config/herdr/session.json workspaces=1
+2026-08-14T22:34:07.439410Z  INFO herdr::server::headless: server shutdown initiated
+2026-08-14T22:34:07.489501Z  INFO herdr::server::headless: completing server shutdown
+2026-08-14T22:34:07.540150Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/asyarb/.config/herdr/session.json workspaces=1
+2026-08-14T22:34:07.540164Z  INFO herdr::server::headless: headless server exiting
+2026-08-14T22:34:07.540887Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=4 status="ExitStatus { code: 1, signal: Some(\"Hangup\") }"
+2026-08-14T22:34:07.543923Z  INFO herdr::pane: pane session terminated pane=4 pid=41382 signal=Hangup
+2026-08-14T22:34:07.544211Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="server" outcome="completed" pid=40491
+2026-08-15T09:10:18.976374Z  INFO herdr::api::server: api server listening path=/home/asyarb/.config/herdr/herdr.sock
+2026-08-15T09:10:18.977028Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-08-15T09:10:18.977807Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=283975
+2026-08-15T09:10:18.977926Z  INFO herdr::logging: session restore evaluated event="persist.restore" subsystem="persist" outcome="ok" workspaces=1
+2026-08-15T09:10:18.977938Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-08-15T09:10:18.999148Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-15T09:10:19.000608Z  INFO herdr::server::headless: restored session already has workspaces; ignoring startup cwd cwd=/home/asyarb/Work/dotfiles
+2026-08-15T09:10:19.000671Z  INFO herdr::server::headless: client protocol socket listening path=/home/asyarb/.config/herdr/herdr-client.sock
+2026-08-15T09:10:19.000689Z  INFO herdr::server::headless: herdr server started api_socket=/home/asyarb/.config/herdr/herdr.sock client_socket=/home/asyarb/.config/herdr/herdr-client.sock
+2026-08-15T09:10:19.000869Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=283961
+2026-08-15T09:10:19.035077Z  INFO herdr::server::headless: client connected client_id=2 cols=222 rows=60 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-15T09:10:19.043919Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-15T09:10:30.448290Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="ok" action="install" target="pi"
+2026-08-15T09:10:30.448319Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="omp"
+2026-08-15T09:10:30.448443Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="ok" action="install" target="claude"
+2026-08-15T09:10:30.448540Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="ok" action="install" target="codex"
+2026-08-15T09:10:30.448547Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="copilot"
+2026-08-15T09:10:30.448673Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="ok" action="install" target="opencode"
+2026-08-15T09:10:30.448682Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="grok"
+2026-08-15T09:10:35.450648Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/asyarb/.config/herdr/session.json workspaces=1
+2026-08-15T09:10:37.484155Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="omp"
+2026-08-15T09:10:37.484184Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="copilot"
+2026-08-15T09:10:37.484193Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="grok"
+2026-08-15T09:10:38.455180Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="omp"
+2026-08-15T09:10:38.455213Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="copilot"
+2026-08-15T09:10:38.455222Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="grok"
+2026-08-15T09:10:38.764925Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="omp"
+2026-08-15T09:10:38.764955Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="copilot"
+2026-08-15T09:10:38.764964Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="grok"
+2026-08-15T09:10:43.767007Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/asyarb/.config/herdr/session.json workspaces=1
+2026-08-15T09:10:54.058929Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="omp"
+2026-08-15T09:10:54.058958Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="copilot"
+2026-08-15T09:10:54.058968Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="error" action="install" target="grok"
+2026-08-15T09:10:59.060361Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/asyarb/.config/herdr/session.json workspaces=1
+2026-08-15T09:11:10.602476Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=1 status="ExitStatus { code: 0, signal: None }"
+2026-08-15T09:11:10.603968Z  INFO herdr::pane: pane session terminated pane=1 pid=283975 signal=Hangup
+2026-08-15T09:11:10.604234Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=2 rows=59 cols=196 scrollback_limit_bytes=10000000
+2026-08-15T09:11:10.605235Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=2 pid=284463
+2026-08-15T09:11:10.605352Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w5" pane_id=2
+2026-08-15T09:11:10.605358Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w5"
+2026-08-15T09:11:10.605367Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w5" tab_id="w5:t1"
+2026-08-15T09:11:11.629982Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=2 status="ExitStatus { code: 0, signal: None }"
+2026-08-15T09:11:11.632043Z  INFO herdr::pane: pane session terminated pane=2 pid=284463 signal=Hangup
+2026-08-15T09:11:11.632138Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=3 rows=59 cols=196 scrollback_limit_bytes=10000000
+2026-08-15T09:11:11.633107Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=3 pid=284738
+2026-08-15T09:11:11.633216Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w6" pane_id=3
+2026-08-15T09:11:11.633222Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6"
+2026-08-15T09:11:11.633230Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6" tab_id="w6:t1"
+2026-08-15T09:11:12.120959Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=3 status="ExitStatus { code: 0, signal: None }"
+2026-08-15T09:11:12.123089Z  INFO herdr::pane: pane session terminated pane=3 pid=284738 signal=Hangup
+2026-08-15T09:11:12.123184Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=4 rows=59 cols=196 scrollback_limit_bytes=10000000
+2026-08-15T09:11:12.124096Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=4 pid=285001
+2026-08-15T09:11:12.124185Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w7" pane_id=4
+2026-08-15T09:11:12.124191Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w7"
+2026-08-15T09:11:12.124200Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w7" tab_id="w7:t1"
+2026-08-15T09:11:17.124988Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/asyarb/.config/herdr/session.json workspaces=1
+2026-08-15T09:11:19.053666Z  INFO herdr::server::headless: server shutdown initiated
+2026-08-15T09:11:19.103755Z  INFO herdr::server::headless: completing server shutdown
+2026-08-15T09:11:19.154279Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/asyarb/.config/herdr/session.json workspaces=1
+2026-08-15T09:11:19.154292Z  INFO herdr::server::headless: headless server exiting
+2026-08-15T09:11:19.154959Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=4 status="ExitStatus { code: 1, signal: Some(\"Hangup\") }"
+2026-08-15T09:11:19.158141Z  INFO herdr::pane: pane session terminated pane=4 pid=285001 signal=Hangup
+2026-08-15T09:11:19.158440Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="server" outcome="completed" pid=283961
