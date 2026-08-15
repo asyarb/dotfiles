@@ -1,1 +1,1 @@
-../../../../.local/state/omarchy/current/theme/neovim.lua
+/home/asyarb/.local/state/omarchy/current/theme/neovim.lua

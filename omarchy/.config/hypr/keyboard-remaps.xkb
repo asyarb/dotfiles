@@ -1,0 +1,11 @@
+xkb_keymap {
+  xkb_keycodes { include "evdev+aliases(qwerty)" };
+  xkb_types { include "complete" };
+  xkb_compat { include "complete" };
+  xkb_symbols {
+    include "pc+us+inet(evdev)+capslock(ctrl_modifier)+altwin(swap_alt_win)"
+    key <ESC> { [ grave, asciitilde ] };
+    key <TLDE> { [ Escape ] };
+  };
+  xkb_geometry { include "pc(pc105)" };
+};
