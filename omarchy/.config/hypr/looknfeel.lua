@@ -41,6 +41,9 @@
 --   },
 -- })
 
+-- Disable Omarchy's default window translucency.
+o.window(".*", { opacity = "1.0 override 1.0 override 1.0 override" })
+
 -- https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/
 -- hl.config({
 --   scrolling = {
