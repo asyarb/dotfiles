@@ -52,6 +52,10 @@ setopt hist_find_no_dups
 # (don't mess with these directly, just overwrite them here!)
 source "$OMARCHY_PATH/default/bash/aliases"
 
+# Aliases
+alias lg="lazygit"
+alias dc="docker compose"
+
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -61,4 +65,4 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --icons $real
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# eval "$(mise activate zsh)"
+eval "$(zoxide init zsh)"
