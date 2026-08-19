@@ -37,11 +37,37 @@ zinit cdreplay -q
 
 # Aliases
 alias mkdir="mkdir -pv"
-alias cd..="cd .."
-alias ..="cd .."
-alias wget="wget -c"
-alias ls="eza --icons"
-alias sl="eza --icons"
+
+if command -v zoxide &> /dev/null; then
+  alias cd="zd"
+  zd() {
+    if (( $# == 0 )); then
+      builtin cd ~ || return
+    elif [[ -d $1 ]]; then
+      builtin cd "$1" || return
+    else
+      if ! z "$@"; then
+        echo "Error: Directory not found"
+        return 1
+      fi
+
+      printf "\U000F17A9 "
+      pwd
+    fi
+  }
+fi
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+if command -v eza &> /dev/null; then
+  alias ls='eza -lh --group-directories-first --icons=auto'
+  alias lsa='ls -a'
+  alias lt='eza --tree --level=2 --long --icons --git'
+  alias lta='lt -a'
+fi
+
+
 alias wwssh="ssh -i ~/.ssh/ww_id_rsa"
 alias wwssh2="ssh -i ~/.ssh/ww_id_rsa_old"
 alias dc='docker compose'
@@ -91,6 +117,7 @@ export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/Library/Python/3.9/site-packages/usr
 [ -s "/Users/anthonyyarbrough/.bun/_bun" ] && source "/Users/anthonyyarbrough/.bun/_bun"
 
 eval "$(mise activate zsh)"
+eval "$(zoxide init zsh)"
 
 # opencode
 export PATH=/Users/anthonyyarbrough/.opencode/bin:$PATH
