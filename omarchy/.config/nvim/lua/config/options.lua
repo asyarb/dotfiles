@@ -3,6 +3,13 @@
 -- Add any additional options here
 -- require("config.remote_clipboard").setup()
 
+-- Use HTML Treesitter highlighting for MJML files.
+vim.filetype.add({
+  extension = {
+    mjml = "html",
+  },
+})
+
 -- Tab size of 3.
 vim.opt.tabstop = 3
 vim.opt.shiftwidth = 3
