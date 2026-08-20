@@ -2,7 +2,7 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
--- Use HTML Treesitter syntax for MJML files.
+-- Use HTML Treesitter highlighting for MJML files.
 vim.filetype.add({
 	extension = {
 		mjml = "html",

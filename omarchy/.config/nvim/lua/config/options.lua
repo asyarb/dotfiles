@@ -3,7 +3,7 @@
 -- Add any additional options here
 -- require("config.remote_clipboard").setup()
 
--- Use HTML Treesitter syntax for MJML files.
+-- Use HTML Treesitter highlighting for MJML files.
 vim.filetype.add({
   extension = {
     mjml = "html",
