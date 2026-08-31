@@ -21,6 +21,7 @@ return {
 			javascript = js,
 			json = js,
 			markdown = js,
+			astro = { "prettier" },
 		},
 	},
 }
