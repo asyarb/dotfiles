@@ -121,3 +121,6 @@ eval "$(zoxide init zsh)"
 
 # opencode
 export PATH=/Users/anthonyyarbrough/.opencode/bin:$PATH
+
+# Vite+ bin (https://viteplus.dev)
+. "/Users/anthonyyarbrough/.config/vite-plus/env"

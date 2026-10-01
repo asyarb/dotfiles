@@ -3,6 +3,8 @@ return {
 	opts = function(_, opts)
 		opts.diagnostics.virtual_text = false
 		opts.servers.phpactor = false
+		-- Keep Mason from auto-enabling the legacy tsgo server alongside vtsls.
+		-- opts.servers.tsgo = { enabled = false }
 		opts.servers.tailwindcss = {
 			settings = {
 				tailwindCSS = {
