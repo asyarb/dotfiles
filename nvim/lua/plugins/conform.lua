@@ -7,18 +7,18 @@ return {
 	---@module 'conform'
 	---@type conform.setupOpts
 	opts = {
-		formatters = {
-			oxfmt = {
-				cwd = require("conform.util").root_file({
-					".oxfmtrc.json",
-					".oxfmtrc.jsonc",
-					"oxfmt.config.ts",
-					-- Vite+ configures oxfmt in its Vite config.
-					"vite.config.ts",
-					"vite.config.js",
-				}),
-			},
-		},
+		-- formatters = {
+		-- 	oxfmt = {
+		-- 		cwd = require("conform.util").root_file({
+		-- 			".oxfmtrc.json",
+		-- 			".oxfmtrc.jsonc",
+		-- 			"oxfmt.config.ts",
+		-- 			-- Vite+ configures oxfmt in its Vite config.
+		-- 			"vite.config.ts",
+		-- 			"vite.config.js",
+		-- 		}),
+		-- 	},
+		-- },
 		formatters_by_ft = {
 			lua = { "stylua" },
 			fish = { "fish_indent" },

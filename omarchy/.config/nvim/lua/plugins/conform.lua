@@ -2,37 +2,37 @@
 local js = { "prettier", "oxfmt", stop_after_first = true }
 
 return {
-	"stevearc/conform.nvim",
+  "stevearc/conform.nvim",
 
-	---@module 'conform'
-	---@type conform.setupOpts
-	opts = {
-		formatters = {
-			oxfmt = {
-				cwd = require("conform.util").root_file({
-					".oxfmtrc.json",
-					".oxfmtrc.jsonc",
-					"oxfmt.config.ts",
-					-- Vite+ configures oxfmt in its Vite config.
-					"vite.config.ts",
-					"vite.config.js",
-				}),
-			},
-		},
-		formatters_by_ft = {
-			lua = { "stylua" },
-			fish = { "fish_indent" },
-			sh = { "shfmt" },
-			php = { "pint" },
-			go = { "gofmt" },
+  ---@module 'conform'
+  ---@type conform.setupOpts
+  opts = {
+    -- formatters = {
+    -- 	oxfmt = {
+    -- 		cwd = require("conform.util").root_file({
+    -- 			".oxfmtrc.json",
+    -- 			".oxfmtrc.jsonc",
+    -- 			"oxfmt.config.ts",
+    -- 			-- Vite+ configures oxfmt in its Vite config.
+    -- 			"vite.config.ts",
+    -- 			"vite.config.js",
+    -- 		}),
+    -- 	},
+    -- },
+    formatters_by_ft = {
+      lua = { "stylua" },
+      fish = { "fish_indent" },
+      sh = { "shfmt" },
+      php = { "pint" },
+      go = { "gofmt" },
 
-			css = js,
-			typescriptreact = js,
-			typescript = js,
-			html = js,
-			javascript = js,
-			json = js,
-			markdown = js,
-		},
-	},
+      css = js,
+      typescriptreact = js,
+      typescript = js,
+      html = js,
+      javascript = js,
+      json = js,
+      markdown = js,
+    },
+  },
 }
