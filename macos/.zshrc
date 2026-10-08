@@ -72,6 +72,7 @@ alias wwssh="ssh -i ~/.ssh/ww_id_rsa"
 alias wwssh2="ssh -i ~/.ssh/ww_id_rsa_old"
 alias dc='docker compose'
 alias lg='lazygit'
+alias oc="opencode"
 
 # History
 HISTSIZE=5000
